@@ -10,6 +10,12 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    cash_balance = db.Column(db.Float, default=0)
+
+    portfolio_stocks= db.relationship("PortfolioStocks", back_populates='users')
+    
+    watchlist_stocks=db.relationship("WatchlistStocks", back_populates='users')
+
 
     @property
     def password(self):
@@ -26,5 +32,8 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'cash_balance': self.cash_balance
         }
+
+
