@@ -1,32 +1,39 @@
+# [In Progress...]
 
-# [Robinhood][blob]- link to site
 
-# [Features][blob ]- link to features wiki page
 
-# [Schema][blob]- link to schema wiki page
+##  [Robinhood]()- in progress...
+ 
+####  [Features](blob) in progress...
 
+####  [Schema](https://github.com/geoffyang/robinhood/wiki/Database-Schema)
+
+
+[Overview](blob) in progress... (quick reveal of site functionality(gif))
+
+
+### Schema 
 
 ![schema](https://user-images.githubusercontent.com/65651149/125984971-27fbe2ec-b4e8-455c-b1a1-9dd245b1ef0b.jpeg)
 
--[Landing][blob]
+ - [Landing](blob)<= will be image blob
 
--[WatchList][blob]
+ - [WatchList](blob)<= will be image blob
 
--[Portfolio][blob]
+ - [Portfolio](blob)<= will be image blob
 
-
-[Overview][blob]----- quick reveal of site functionality
-
-# Technologies Used:
- -Python
- -JavaScript
- -Flask
- -SQLAlchemy
- -React
- -Redux
- -....
-
-Best Code Snippet(s):
+# Technologies Used
+ - Python
+ - JavaScript
+ - Flask
+ - SQLAlchemy
+ - React
+ - Redux
+ - HTML
+ - CSS
+ - JSX
+ 
+Highlighted Code Snippet(s):
 
 ```javascript
 
@@ -36,5 +43,5 @@ Best Code Snippet(s):
 
 ## Developers
 
-Githubs/Linked-Ins:
--(Consider placing this on Landing Page as Well(unsure if it’s required)
+Githubs/Linked-Ins.....
+
