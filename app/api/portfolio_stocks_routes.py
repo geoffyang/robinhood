@@ -7,8 +7,8 @@ from app.forms import BuyForm
 
 portfolio_stocks_routes = Blueprint('portfolio_stocks', __name__)
 
-
-@portfolio_stocks_routes.route('/')  # /api/portfolio-stocks/
+# GET /api/portfolio-stocks/
+@portfolio_stocks_routes.route('/')
 @login_required
 def portfolio():
     portfolio_stocks = PortfolioStocks.query.filter(
@@ -18,7 +18,7 @@ def portfolio():
 
 # /api/portfolio-stocks/:ticker
 @login_required
-@portfolio_stocks_routes.route('/<ticker>', methods=['POST', 'PATCH'])
+@portfolio_stocks_routes.route('/<ticker>', methods=['GET'])
 def add_ticker_to_portfolio(ticker):
     # form = BuyForm()
     # form['csrf_token'].data = request.cookies['csrf_token']
@@ -32,4 +32,5 @@ def add_ticker_to_portfolio(ticker):
     db.session.add(purchased_stock)
     db.session.commit()
     return {"purchased":ticker}
+
 
