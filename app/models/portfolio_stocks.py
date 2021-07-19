@@ -9,4 +9,6 @@ class PortfolioStocks(db.Model):
     ticker = db.Column(db.VARCHAR(5), nullable=False)
     basis = db.Column(db.Float, nullable=False)
     share_count = db.Column(db.Integer, nullable=False, default=0)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+
+    owner = db.relationship("User", back_populates="portfolio_stocks")
