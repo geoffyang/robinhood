@@ -19,7 +19,7 @@ def portfolio():
 
 # /api/portfolio-stocks/:ticker
 @login_required
-@portfolio_stocks_routes.route('/<ticker>', methods=['GET'])
+@portfolio_stocks_routes.route('/<ticker>', methods=['POST'])
 def add_ticker_to_portfolio(ticker):
     # form = BuyForm()
     # form['csrf_token'].data = request.cookies['csrf_token']
