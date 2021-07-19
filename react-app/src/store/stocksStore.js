@@ -12,12 +12,7 @@ const loadOneStock = stock => ({
 });
 
 export const getSingleStock = (ticker) => async dispatch => {
-  console.log(ticker)
   const response = await fetch(`/api/stocks/${ticker}`);
-
-  console.log('This is the response: ', response)
-
-  console.log()
 
   if (response.ok) {
     const stock = await response.json();
@@ -54,7 +49,6 @@ export default function stockReducer(state = initialState, action) {
     case LOAD_SINGLE_STOCK:
       newState = Object.assign({}, state);
       newState[action.stock.ticker] = action.stock;
-      console.log(action.stock, ' ----- ', newState)
       return newState;
     default:
       return state;
