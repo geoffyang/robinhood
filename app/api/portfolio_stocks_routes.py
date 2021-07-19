@@ -19,7 +19,7 @@ def portfolio():
 
 # /api/portfolio-stocks/:ticker
 @login_required
-@portfolio_stocks_routes.route('/<ticker>', methods=['POST'])
+@portfolio_stocks_routes.route('/<ticker>', methods=['GET'])
 def add_ticker_to_portfolio(ticker):
     # form = BuyForm()
     # form['csrf_token'].data = request.cookies['csrf_token']
@@ -35,7 +35,7 @@ def add_ticker_to_portfolio(ticker):
         stock_already_in_portfolio.share_count += 1
         db.session.add(stock_already_in_portfolio)
         db.session.commit()
-        return {"purchased": ticker, "new_share_count": stock_already_in_portfolio.share_count}
+        return stock_already_in_portfolio.to_dict();
     else:
         purchased_stock = PortfolioStocks(
             ticker=ticker,
@@ -45,4 +45,4 @@ def add_ticker_to_portfolio(ticker):
         )
         db.session.add(purchased_stock)
         db.session.commit()
-        return {"purchased": ticker}
+        return purchased_stock.to_dict();
