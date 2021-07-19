@@ -23,14 +23,26 @@ def add_ticker_to_portfolio(ticker):
     # form = BuyForm()
     # form['csrf_token'].data = request.cookies['csrf_token']
     # ticker = form.data['ticker']
-    purchased_stock = PortfolioStocks(
-        ticker=ticker,
-        basis = 10.00,
-        share_count = 1,
-        user_id = current_user.id
-    )
-    db.session.add(purchased_stock)
-    db.session.commit()
-    return {"purchased":ticker}
+
+    stock_already_in_portfolio = PortfolioStocks.query.filter(
+            PortfolioStocks.user_id==current_user.id,
+            PortfolioStocks.ticker == ticker
+            ).one_or_none()
+
+    if stock_already_in_portfolio:
+        stock_already_in_portfolio.share_count += 1
+        db.session.add(stock_already_in_portfolio)
+        db.session.commit()
+        return {"incremented":ticker, }
+    else:
+        purchased_stock = PortfolioStocks(
+            ticker=ticker,
+            basis = 10.00,
+            share_count = 1,
+            user_id = current_user.id
+        )
+        db.session.add(purchased_stock)
+        db.session.commit()
+        return {"purchased":ticker}
 
 
