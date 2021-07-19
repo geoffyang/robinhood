@@ -43,7 +43,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
-          <Stock />
+          <Stock ticker={'AAPL'}/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
