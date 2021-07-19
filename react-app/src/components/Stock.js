@@ -10,9 +10,10 @@ function Stock() {
 
   useEffect(() => {
     (async() => {
-      const singleStock = await dispatch(getSingleStock('AAPL'))
+      const singleStock = await dispatch(getSingleStock('aapl'));
+      console.log('this is the singleStock: ', singleStock);
       if(!singleStock) {
-        console.log('There should be error handling here!!!(Stock.js component)')
+        console.log('There should be error handling here!!!(Stock.js component)');
       } else {
         setStock(singleStock);
       }
@@ -22,7 +23,7 @@ function Stock() {
   return (
     <>
       <div>
-        {stock}
+        {stock.ticker} {stock.currentPrice}
       </div>
     </>
   );
