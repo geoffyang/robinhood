@@ -35,8 +35,7 @@ export default function portfolioReducer(state = initialState, action) {
     let newState = {}
     switch (action.type) {
         case LOAD_PORTFOLIO:
-            const portfolio = action.portfolio;
-            portfolio.forEach(stock => newState[stock.ticker] = stock)
+            action.portfolio.forEach(stock => newState[stock.ticker] = stock)
             return newState;
         case BUY_STOCK:
             newState = Object.assign({}, state);
