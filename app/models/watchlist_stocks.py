@@ -11,3 +11,10 @@ class WatchlistStocks(db.Model):
         "users.id", ondelete="CASCADE"), nullable=False)
 
     owner = db.relationship("User", back_populates="watchlist_stocks")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'ticker': self.ticker,
+            'user_id': self.user_id,
+        }

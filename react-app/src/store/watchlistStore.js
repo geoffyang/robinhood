@@ -7,11 +7,12 @@ const loadWatchlist = (watched) => ({
 })
 
 export const getAllInWatchList = () => async dispatch => {
-    const res = await fetch('/api/watchlist-stocks')
-    console.log(res)
-    if (res.ok){
-        const watched = await res.json()
-        dispatch(loadWatchlist(watched))
+    const response = await fetch('/api/watchlist-stocks');
+    console.log('watchlist res: ', response);
+
+    if (response.ok){
+        const watched = await response.json();
+        dispatch(loadWatchlist(watched));
     }
 }
 
