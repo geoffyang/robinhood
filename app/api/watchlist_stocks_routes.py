@@ -9,9 +9,10 @@ watchlist_stocks_routes = Blueprint('watchlist_stocks', __name__)
 
 
 @watchlist_stocks_routes.route('/')
-# @login_required
+@login_required
 def watchlist():
-    print('____________________________')
+    print('---------------------------------------------------------')
     watchlist_stocks = WatchlistStocks.query.filter(
         WatchlistStocks.user_id == current_user.id).all()
+    print('>>>>>>>>>>>', watchlist_stocks)
     return {'watchlist': [stock.to_dict() for stock in watchlist_stocks]}

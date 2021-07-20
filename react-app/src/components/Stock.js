@@ -4,11 +4,9 @@ import { getSingleStock } from '../store/stocksStore';
 import { Line } from 'react-chartjs-2';
 
 function Stock({ ticker }) {
-  const [stock, setStock] = useState({});
   const [stockData, setStockData] = useState('dailyPrices')
-  const [labels, setLabels] = useState([1, 2, 3, 4, 5, 6])
   const [data, setData] = useState({})
-  const stocks = useSelector(state => state.stocks);
+  const stocks = useSelector(state => state?.stocks);
   const dispatch = useDispatch();
   const options = {
     scales: {
@@ -23,18 +21,19 @@ function Stock({ ticker }) {
   };
 
   useEffect(() => {
-    dispatch(getSingleStock(ticker));
-    setStock(stocks[ticker])
-  }, [dispatch ])
+    (async () => {
+      await dispatch(getSingleStock(ticker));
+    })();
+  }, [dispatch])
 
   useEffect(() => {
-    if (stock) {
+    if (stocks[ticker]) {
       setData({
-        labels: stock[stockData],
+        labels: stocks[ticker][stockData],
         datasets: [
           {
             label: ticker,
-            data: stock[stockData],
+            data: stocks[ticker][stockData],
             fill: false,
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgba(255, 99, 132, 0.2)',
@@ -42,11 +41,11 @@ function Stock({ ticker }) {
         ],
       })
     }
-  }, [stockData])
+  }, [stockData, stocks])
 
   return (
     <div className='graphContainer'>
-      <h1>{stock?.shortName}</h1>
+      <h1>{stocks[ticker]?.shortName}</h1>
       <div className='graphButtons'>
         <button onClick={() => {
           setStockData('dailyPrices');
@@ -66,12 +65,11 @@ function Stock({ ticker }) {
       </div>
       <div className='graph'>
         {
-          (stock) ?
+          (stocks[ticker]) ?
           <Line data={data} options={options} />
           :
           <h3>Loading...</h3>
         }
-        {/* <div>{stock?.ticker} - {stock?.currentPrice}</div> */}
       </div>
     </div>
   );
