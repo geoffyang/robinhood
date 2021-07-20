@@ -1,6 +1,5 @@
 const LOAD_WATCHLIST = "watchlist/LOAD_WATCHLIST";
-const ADD_WATCHLIST = "add_to_watchlist/ADD_WATCHLIST"; //clarification????
-const DELETE_WATCHLIST = "delete_watchlist_ticker/DELETE_WATCHLIST";
+const DELETE_WATCHLIST = "watchlist/DELETE_WATCHLIST";
 
 const loadWatchlist = (watched) => ({
   type: LOAD_WATCHLIST,
@@ -8,7 +7,7 @@ const loadWatchlist = (watched) => ({
 });
 
 const addTicker = (ticker) => ({
-  type: ADD_WATCHLIST,
+  type: LOAD_WATCHLIST,
   ticker,
 });
 
@@ -20,16 +19,14 @@ const deleteTicker = (ticker) => ({
 // get for watchlist
 export const getAllInWatchList = () => async (dispatch) => {
   const response = await fetch("/api/watchlist-stocks/");
-  console.log("watchlist res: ", response);
-
   if (response.ok) {
     const watched = await response.json();
-    dispatch(loadWatchlist(watched));
+    dispatch(loadWatchlist(watched['watchlist']));
   }
 };
 
 // post for watchlist
-export const addNewTicker = () => async (dispatch) => {
+export const addNewTicker = (ticker) => async (dispatch) => {
   const response = await fetch(`/api/watchlist-stocks/${ticker}`);
 
   if (response.ok) {
@@ -38,7 +35,10 @@ export const addNewTicker = () => async (dispatch) => {
   }
 };
 
-export const deleteTicker = () => async (dispatch) => {
+export const deleteTickerThunk = (ticker) => async (dispatch) => {
+  const response = await fetch(`/api/watchlist-stocks/${ticker}`, {
+    method: "DELETE"
+  })
   if (response.ok) {
     const ticker = await response.json();
     dispatch(deleteTicker(ticker));
@@ -51,15 +51,12 @@ export default function watchListReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_WATCHLIST:
       newState = Object.assign({}, state);
-      newState[action.watched.ticker] = action.watched;
+      console.log(action.watched, '>>>>>>>>>>>>>>>>>>>>>>')
+      newState['watchlist'] = action.watched;
       return newState;
-    case ADD_WATCHLIST:                         // newly added //
-      newState = Object.assign({}, state);
-      newState[action.ticker.ticker] = action.ticker;
-      return newState;                       //check this //
     case DELETE_WATCHLIST:
-        newState = Object.assign({}, state)
-        newState[action.ticker.ticker] = action.ticker
+      newState = {...state}
+      delete newState[action.ticker]
       return newState;
     default:
       return state;
