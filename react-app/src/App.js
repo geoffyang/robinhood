@@ -6,6 +6,7 @@ import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Stock from './components/Stock';
+import Watchlist from './components/Watchlist'
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
@@ -37,14 +38,15 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
-          <Stock ticker={'AAPL'}/>
+          <Stock ticker={'AAPL'} />
+          <Watchlist />
         </ProtectedRoute>
         <ProtectedRoute path='/portfolio' exact={true}>
           <Portfolio />
