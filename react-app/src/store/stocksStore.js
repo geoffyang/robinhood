@@ -20,17 +20,17 @@ export const getSingleStock = (ticker) => async dispatch => {
   };
 };
 
-export const getMultipleStocks = (tickersList) => async dispatch => {
-  const stocks = [];
-  tickersList.forEach( async ticker => {
-    const response = await fetch(`https://www.styvio.com/api/${ticker}`);
+// export const getMultipleStocks = (tickersList) => async dispatch => {
+//   const stocks = [];
+//   tickersList.forEach( async ticker => {
+//     const response = await fetch(`https://www.styvio.com/api/${ticker}`);
 
-    if (response.ok) {
-      stocks.push(await response.json());
-    };
-  });
-  dispatch(loadManyStocks(stocks));
-};
+//     if (response.ok) {
+//       stocks.push(await response.json());
+//     };
+//   });
+//   dispatch(loadManyStocks(stocks));
+// };
 
 const initialState = {};
 

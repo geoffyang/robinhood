@@ -13,7 +13,8 @@ const addStock = stockObj => ({
 })
 
 export const getPortfolio = () => async dispatch => {
-    const response = await fetch('/api/portfolio-stocks')
+    const response = await fetch('/api/portfolio-stocks/')
+    console.log("RESPONSE ON LINE 17", response)
     if (response.ok) {
         const portfolio = await response.json()
         dispatch(loadPortfolio(portfolio));
@@ -34,8 +35,7 @@ export default function portfolioReducer(state = initialState, action) {
     let newState = {}
     switch (action.type) {
         case LOAD_PORTFOLIO:
-            const portfolio = action.portfolio;
-            portfolio.forEach(stock => newState[stock.ticker] = stock)
+            action.portfolio.forEach(stock => newState[stock.ticker] = stock)
             return newState;
         case BUY_STOCK:
             newState = Object.assign({}, state);

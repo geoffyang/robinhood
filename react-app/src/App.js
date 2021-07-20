@@ -45,6 +45,8 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
           <Stock ticker={'AAPL'}/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/portfolio' exact={true}>
           <Portfolio />
         </ProtectedRoute>
       </Switch>

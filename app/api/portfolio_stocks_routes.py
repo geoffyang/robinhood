@@ -30,22 +30,23 @@ def add_ticker_to_portfolio(ticker):
         PortfolioStocks.ticker == ticker
     ).one_or_none()
 
-    # response = requests.get(f"https://www.styvio.com/api/{ticker}")
-    # data = response.json()
-    # current_price = float(data.currentPrice)
+    response = requests.get(f"https://www.styvio.com/api/{ticker}")
+    data = response.json()
+    current_price = float(data['currentPrice'][1:])
 
     if stock_already_in_portfolio:
-        # expanded_basis = stock_already_in_portfolio['share_count'] * stock_already_in_portfolio['basis']
+        expanded_basis = stock_already_in_portfolio.share_count * stock_already_in_portfolio.basis
         stock_already_in_portfolio.share_count += 1
-        # new_basis = (expanded_basis+current_price) / \
-            # stock_already_in_portfolio['share_count']
+        new_basis = (expanded_basis+current_price) / \
+            stock_already_in_portfolio.share_count
+        stock_already_in_portfolio.basis = new_basis
         db.session.add(stock_already_in_portfolio)
         db.session.commit()
         return stock_already_in_portfolio.to_dict();
     else:
         purchased_stock = PortfolioStocks(
             ticker=ticker,
-            basis=10,
+            basis=current_price,
             share_count=1,
             user_id=current_user.id
         )
