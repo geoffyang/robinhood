@@ -6,7 +6,7 @@ import { Line } from 'react-chartjs-2';
 function Stock({ ticker }) {
   const [stock, setStock] = useState({});
   const [stockData, setStockData] = useState('dailyPrices')
-  const [labels, setLabels] = useState([1, 2, 3, 4, 5, 6])
+  // const [labels, setLabels] = useState([1, 2, 3, 4, 5, 6])
   const [data, setData] = useState({})
   const stocks = useSelector(state => state.stocks);
   const dispatch = useDispatch();
@@ -23,8 +23,10 @@ function Stock({ ticker }) {
   };
 
   useEffect(() => {
-    dispatch(getSingleStock(ticker));
-    setStock(stocks[ticker])
+    (async () => {
+      await dispatch(getSingleStock(ticker));
+      await setStock(stocks[ticker])
+    })();
   }, [dispatch])
 
   useEffect(() => {
