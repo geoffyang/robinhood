@@ -14,7 +14,7 @@ const addStock = stockObj => ({
 
 export const getPortfolio = () => async dispatch => {
     const response = await fetch('/api/portfolio-stocks/')
-    console.log("RESPONSE ON LINE 17", response)
+    console.log("Portfolio THUNK line 17. is there any response???? ", response);
     if (response.ok) {
         const portfolio = await response.json()
         dispatch(loadPortfolio(portfolio));

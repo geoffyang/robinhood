@@ -25,7 +25,7 @@ function Stock({ ticker }) {
   useEffect(() => {
     dispatch(getSingleStock(ticker));
     setStock(stocks[ticker])
-  }, [dispatch])
+  }, [dispatch ])
 
   useEffect(() => {
     if (stock) {

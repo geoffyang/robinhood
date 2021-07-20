@@ -42,7 +42,7 @@ def add_ticker_to_portfolio(ticker):
         stock_already_in_portfolio.basis = new_basis
         db.session.add(stock_already_in_portfolio)
         db.session.commit()
-        return stock_already_in_portfolio.to_dict();
+        return stock_already_in_portfolio.to_dict()
     else:
         purchased_stock = PortfolioStocks(
             ticker=ticker,
@@ -52,4 +52,4 @@ def add_ticker_to_portfolio(ticker):
         )
         db.session.add(purchased_stock)
         db.session.commit()
-        return purchased_stock.to_dict();
+        return purchased_stock.to_dict()
