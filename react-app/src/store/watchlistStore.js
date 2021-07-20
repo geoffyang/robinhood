@@ -1,30 +1,64 @@
-const LOAD_WATCHLIST= 'watchlist/LOAD_WATCHLIST'
-
+const LOAD_WATCHLIST = "watchlist/LOAD_WATCHLIST";
+const DELETE_WATCHLIST = "watchlist/DELETE_WATCHLIST";
 
 const loadWatchlist = (watched) => ({
-    type: LOAD_WATCHLIST,
-    watched,
-})
+  type: LOAD_WATCHLIST,
+  watched,
+});
 
-export const getAllInWatchList = () => async dispatch => {
-    const response = await fetch('/api/watchlist-stocks/');
-    console.log('watchlist res: ', response);
+const addTicker = (ticker) => ({
+  type: LOAD_WATCHLIST,
+  ticker,
+});
 
-    if (response.ok){
-        const watched = await response.json();
-        dispatch(loadWatchlist(watched));
-    }
-}
+const deleteTicker = (ticker) => ({
+  type: DELETE_WATCHLIST,
+  ticker,
+});
 
-const initialState = {}
-export default function watchListReducer(state = initialState, action){
-    let newState = {};
-    switch(action.type) {
-        case LOAD_WATCHLIST:
-            newState = Object.assign({}, state);
-            newState[action.watched.ticker] = action.watched;
-            return newState;
-        default:
-            return state;
-    }
+// get for watchlist
+export const getAllInWatchList = () => async (dispatch) => {
+  const response = await fetch("/api/watchlist-stocks/");
+  if (response.ok) {
+    const watched = await response.json();
+    dispatch(loadWatchlist(watched['watchlist']));
+  }
+};
+
+// post for watchlist
+export const addNewTicker = (ticker) => async (dispatch) => {
+  const response = await fetch(`/api/watchlist-stocks/${ticker}`);
+
+  if (response.ok) {
+    const ticker = await response.json();
+    dispatch(addTicker(ticker));
+  }
+};
+
+export const deleteTickerThunk = (ticker) => async (dispatch) => {
+  const response = await fetch(`/api/watchlist-stocks/${ticker}`, {
+    method: "DELETE"
+  })
+  if (response.ok) {
+    const ticker = await response.json();
+    dispatch(deleteTicker(ticker));
+  }
+};
+
+const initialState = {};
+export default function watchListReducer(state = initialState, action) {
+  let newState = {};
+  switch (action.type) {
+    case LOAD_WATCHLIST:
+      newState = Object.assign({}, state);
+      console.log(action.watched, '>>>>>>>>>>>>>>>>>>>>>>')
+      newState['watchlist'] = action.watched;
+      return newState;
+    case DELETE_WATCHLIST:
+      newState = {...state}
+      delete newState[action.ticker]
+      return newState;
+    default:
+      return state;
+  }
 }
