@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllInWatchList } from '../store/watchlistStore';
+import { getAllInWatchList, addNewTicker } from '../store/watchlistStore';
 
 function Watchlist() {
     // const [] = useState({});

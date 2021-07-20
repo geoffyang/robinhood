@@ -34,6 +34,7 @@ def add_to_watchlist():
 
 
 
+# ask about id vs ticker(is get necessary here)
 @watchlist_stocks_routes.route('/<ticker>', methods=['GET', 'DELETE'])
 def delete_watchlist_ticker(ticker):
     delete_stock = WatchlistStocks.query.get(ticker)
