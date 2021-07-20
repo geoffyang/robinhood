@@ -10,6 +10,12 @@ function Portfolio() {
   const portfolio = useSelector(state => state.portfolio)
   const dispatch = useDispatch()
 
+  const stockArray = []
+  for (const stock in portfolio){
+    stockArray.push(stock)
+  }
+  console.log(stockArray)
+
   useEffect(() => {
     dispatch(getPortfolio())
   }, [dispatch])
@@ -18,6 +24,7 @@ function Portfolio() {
     <>
       <div>
         <div>
+          {stockArray.map(stock => { <li>{stock.ticker}</li> })}
           <table>
             <tbody>
               <tr>
@@ -27,8 +34,8 @@ function Portfolio() {
               </tr>
               <tr>
                 {console.log("this is our portfolio--------- ",portfolio)}
-                {/* <td>{portfolio.aapl.ticker}</td> */}
-                {/* <td>{portfolio.aapl.basis}</td> */}
+                {/* <td>{portfolio.AAPL.ticker}</td> */}
+                {/* <td>{portfolio.AAPL.basis}</td> */}
                 {/* <td>{stock?.currentPrice}</td> */}
               </tr>
             </tbody>
