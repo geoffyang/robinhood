@@ -6,11 +6,6 @@ const loadWatchlist = (watched) => ({
   watched,
 });
 
-const addTicker = (ticker) => ({
-  type: LOAD_WATCHLIST,
-  ticker,
-});
-
 const deleteTicker = (ticker) => ({
   type: DELETE_WATCHLIST,
   ticker,
@@ -27,18 +22,22 @@ export const getAllInWatchList = () => async (dispatch) => {
 
 // post for watchlist
 export const addNewTicker = (ticker) => async (dispatch) => {
-  const response = await fetch(`/api/watchlist-stocks/${ticker}`);
+  const response = await fetch(`/api/watchlist-stocks/${ticker}`, {
+      method: 'POST',
+  });
 
   if (response.ok) {
-    const ticker = await response.json();
-    dispatch(addTicker(ticker));
+    const watched = await response.json();
+    dispatch(loadWatchlist(watched['watchlist']));
   }
 };
 
+// DELETE thunk for watchlist
 export const deleteTickerThunk = (ticker) => async (dispatch) => {
   const response = await fetch(`/api/watchlist-stocks/${ticker}`, {
-    method: "DELETE"
-  })
+    method: 'DELETE',
+  });
+  
   if (response.ok) {
     const ticker = await response.json();
     dispatch(deleteTicker(ticker));
@@ -51,7 +50,6 @@ export default function watchListReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_WATCHLIST:
       newState = Object.assign({}, state);
-      console.log(action.watched, '>>>>>>>>>>>>>>>>>>>>>>')
       newState['watchlist'] = action.watched;
       return newState;
     case DELETE_WATCHLIST:
