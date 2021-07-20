@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPortfolio } from '../store/portfolioStore'
-import Stock from './Stock'
+// import Stock from './Stock'
 //import thunks from store
 
 function Portfolio() {
-  const userId = useSelector(state => state.session.user.id)
-  const stocks = useSelector(state => state.stocks)
+  // const userId = useSelector(state => state.session.user.id)
+  // const stocks = useSelector(state => state.stocks)
   const portfolio = useSelector(state => state.portfolio)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getPortfolio())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
@@ -26,7 +26,7 @@ function Portfolio() {
                 <td>Live Price</td>
               </tr>
               <tr>
-                {console.log(portfolio)}
+                {console.log("this is our portfolio--------- ",portfolio)}
                 {/* <td>{portfolio.aapl.ticker}</td> */}
                 {/* <td>{portfolio.aapl.basis}</td> */}
                 {/* <td>{stock?.currentPrice}</td> */}
