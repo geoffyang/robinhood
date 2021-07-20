@@ -22,23 +22,32 @@ def watchlist():
     return {'watchlist':[stock.to_dict() for stock in watchlist_stocks]}
 
 
-
-# make this a post
-# @watchlist_stocks_routes.route('/<ticker>', methods= ['GET','POST'])
-# @login_required
-# def add_to_watchlist():
-#     new_addition =
-
-
-
-
-@watchlist_stocks_routes.route('/<ticker>', methods=['GET', 'DELETE'])
+@watchlist_stocks_routes.route('/<ticker>', methods=['POST', 'DELETE'])
 @login_required
-def delete_watchlist_ticker(ticker):
+def watchlist_edit(ticker):
+    ticker = ticker.upper()
     if request.method == 'DELETE':
-        delete_stock = WatchlistStocks.query.filter(
-            WatchlistStocks.user_id == current_user.id and WatchlistStocks.ticker == ticker).first()
-        db.session.delete(delete_stock)
+        deleted_stock = WatchlistStocks.query.filter(
+            WatchlistStocks.user_id == current_user.id,
+            WatchlistStocks.ticker == ticker).one_or_none()
+        db.session.delete(deleted_stock)
         db.session.commit()
+        return deleted_stock.to_dict()
 
-    return delete_stock.to_dict() # not sure what to do here yet(want to return watchlist minus ticker deletion)
+    elif request.method == 'POST':
+        stock_already_in_watchlist = WatchlistStocks.query.filter(
+            WatchlistStocks.user_id == current_user.id,
+            WatchlistStocks.ticker == ticker
+        ).one_or_none()
+
+        if stock_already_in_watchlist:
+            return stock_already_in_watchlist.to_dict()
+        else:
+            # check if the ticker exists
+            watched_stock = WatchlistStocks(
+                ticker=ticker,
+                user_id=current_user.id
+            )
+            db.session.add(watched_stock)
+            db.session.commit()
+            return watched_stock.to_dict()

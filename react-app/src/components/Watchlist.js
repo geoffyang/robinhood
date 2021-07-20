@@ -3,26 +3,41 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllInWatchList, addNewTicker, deleteTickerThunk } from '../store/watchlistStore';
 
 function Watchlist() {
-    // const [] = useState({});
     const watchlist = useSelector(state => state.watchlist['watchlist']);
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        console.log(`are we working for watchlist`)
         dispatch(getAllInWatchList())
     },[dispatch])
 
     return (
         <>
             <h1>Hello from watchlist</h1>
-            {/* {console.log(watchlist, '_______________________________', typeof(watchlist))} */}
+            <button onClick={async () => {
+                await dispatch(addNewTicker('AAPL'))
+                await dispatch(getAllInWatchList())
+            }}>ADD AAPL</button>
+            <button onClick={async () => {
+                await dispatch(addNewTicker('TSLA'))
+                await dispatch(getAllInWatchList())
+            }}>ADD TSLA</button>
+            <button onClick={async () => {
+                await dispatch(addNewTicker('SNAP'))
+                await dispatch(getAllInWatchList())
+            }}>ADD SNAP</button>
+            <button onClick={async () => {
+                await dispatch(addNewTicker('NOK'))
+                await dispatch(getAllInWatchList())
+            }}>ADD NOK</button>
             {(watchlist) ?
                 Object.keys(watchlist).map((stock)=> {
-                    console.log('We are now inside of map func')
                     return (
                     <div>
                         {watchlist[stock]?.ticker}
-                        <button onClick={()=> dispatch(deleteTickerThunk(watchlist[stock]?.ticker))}>Delete</button>
+                        <button onClick={async () => {
+                            await dispatch(deleteTickerThunk(watchlist[stock]?.ticker))
+                            await dispatch(getAllInWatchList())
+                        }}>Delete</button>
                     </div>)
                 })
                 :
