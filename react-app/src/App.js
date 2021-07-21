@@ -32,7 +32,7 @@ function App() {
     splashPage = (<ProtectedRoute path='/' exact={true} >
       <h1>My Home Page</h1>
       <Stock ticker={'EBAY'} />
-      <Watchlist />
+      {/* <Watchlist /> */}
     </ProtectedRoute>)
   } else {
     splashPage = (<Route exact path='/'>
@@ -59,6 +59,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/search-results/:searchedTicker' >
           <SearchResults />
+          <Watchlist />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
