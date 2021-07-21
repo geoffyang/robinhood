@@ -9,21 +9,24 @@ export default function Splash() {
         <>
             <div className="splash__nav">
             </div>
-            <div className="splash__body">
+            <div className="investing-for-everyone">
 
-                <div className="body__left">
-                    <h1 className="body__left-title">Investing for Everyone</h1>
+                <div className="investing-left">
+                    <h1 className="investing-left-title">Investing for Everyone</h1>
 
                     <p>Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations apply.</p>
 
-                    <div className="body__left-button">Button Placeholder</div>
+                    <div className="investing-left-button">Button Placeholder</div>
                     <br></br>
-                    <span className="disclosure">Commissions & Free Stock Disclosures</span>
+                    <span className="disclosure">❗️ Commissions & Free Stock Disclosures</span>
                 </div>
-                <div className="body__right">
+
+                <div className="investing-right">
                     <img src="/splash-1.gif" alt="phone"></img>
                 </div>
             </div>
+
+
             <div className="body__fee-disclosure">
                 <span>See our fee schedule to learn more about cost.</span>
             </div>
@@ -33,8 +36,9 @@ export default function Splash() {
                 <div className="ipo__left">
                     <img src="/splash-2.png" alt="airdrop"></img>
                 </div>
+                
                 <div className="ipo__right">
-                    <h1 className="body__left-title">Introducing IPO Access</h1>
+                    <h2 >Introducing IPO Access</h2>
 
                     <p>Get in at the IPO price. Now, you can become one of the first public investors in upcoming IPOs.</p>
                     <p>〄 It's your turn</p>

@@ -3,34 +3,46 @@ body {
     font-size: 18px;
 }
 
-.splash__body {
-    background-color: rgb(249, 48, 34);
+.investing-for-everyone {
+    background-color: rgb(177, 249, 34);
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    margin-top: 7px;
-    margin-right: 7rem;
-    margin-left: 7rem;
-    max-width: 100%;
+    /* margin-top: 7px; */
+    padding-right: 7rem;
+    padding-left: 1rem;
+    margin-left: -9px;
+    margin-right: -9px;
     height: 600px;
 }
 
-.body__left {
+.investing-left {
     background-color: rgb(177, 249, 34);
     width: 40%;
     /* margin-left: 15px; */
+    height: 100%;
 }
 
-img {
-    max-height: 100%;
+img{
+    max-width:100%;
+
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 52px;
+    letter-spacing: -1.75px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 60px;
+}
+
+h2 {
+
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
 }
 
 p {
@@ -40,11 +52,15 @@ p {
     line-height: 36px;
 }
 
+span {
+    font-size: 1.2rem;
+}
+
 .disclosure {
     font-weight: 700;
     font-style: normal;
     letter-spacing: -0.25px;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .disclosure:hover {
@@ -58,7 +74,6 @@ p {
     width: calc(100%+18px);
     margin-left: -9px;
     margin-right: -9px;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 92px;
@@ -66,31 +81,32 @@ p {
 
 .ipo {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
     align-items: center;
     margin-top: 7px;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    /* margin-right: 5rem;
+    margin-left: 5rem; */
     height: 600px;
 }
 
 .ipo__left {
+    border-color: red;
     width: 50%;
 }
 
 .ipo__right {
-    margin-left: 5rem;
-    width: auto;
+    height:100%;
+    width: 50%;
+    margin-left: 2rem;
 }
+
 
 .fractional {
     border-top: 1.5px solid black;
     border-bottom: 1.5px solid black;
 }
 
-.fractional img{
+.fractional img {
     background-position-x: 50%;
     background-position-y: 50%;
-    height:85px;
+    height: 85px;
 }
