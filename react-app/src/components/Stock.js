@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleStock } from '../store/stocksStore';
 import { Line } from 'react-chartjs-2';
+import { buyStock, sellStock } from '../store/portfolioStore';
 
 function Stock({ ticker }) {
   const [stockData, setStockData] = useState('dailyPrices')
@@ -70,6 +71,14 @@ function Stock({ ticker }) {
           :
           <h3>Loading...</h3>
         }
+      </div>
+      <div>
+      <button onClick={async () => {
+        await dispatch(buyStock('AAPL'))
+      }}>BUY STOCK</button>
+      <button onClick={async () => {
+        await dispatch(sellStock('AAPL'))
+      }}>SELL STOCK</button>
       </div>
     </div>
   );

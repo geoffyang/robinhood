@@ -1,5 +1,6 @@
 const LOAD_PORTFOLIO = "portfolio/LOAD_PORTFOLIO";
 const BUY_STOCK = "portfolio/BUY_STOCK"
+const SELL_STOCK = "portfolio/SELL_STOCK"
 
 
 const loadPortfolio = portfolio => ({
@@ -9,6 +10,11 @@ const loadPortfolio = portfolio => ({
 
 const addStock = stockObj => ({
     type: BUY_STOCK,
+    stockObj
+})
+
+const removeStock = stockObj => ({
+    type: SELL_STOCK,
     stockObj
 })
 
@@ -28,6 +34,14 @@ export const buyStock = ticker => async dispatch => {
     }
 }
 
+export const sellStock = ticker => async dispatch => {
+    const response = await fetch(`/api/portfolio-stocks/sell/${ticker}`)
+    if (response.ok){
+        const soldStock = await response.json()
+        dispatch(removeStock(soldStock))
+    }
+}
+
 const initialState = {}
 
 export default function portfolioReducer(state = initialState, action) {
@@ -40,6 +54,10 @@ export default function portfolioReducer(state = initialState, action) {
             newState = Object.assign({}, state);
             newState[action.stockObj.ticker] = action.stockObj
             return newState;
+        case SELL_STOCK:
+            newState = Object.assign({}, state)
+            delete newState[action.stockObj]
+            return newState
         default:
             return state;
     }
