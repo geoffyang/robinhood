@@ -27,13 +27,20 @@ function Watchlist() {
             {(watchlist) ?
                 Object.values(watchlist).map((watchedStock)=> {
                     return (
-                      <div>
-                        <div style={{backgroundImage: `url('${stocks[watchedStock.ticker]?.logoURL}')`}}
-                             className='stock-logo'
-                        ></div>
+                      <div className='watchlist-components'>
                         <div>{watchedStock.ticker}</div>
+                        <div
+                          style={{
+                            backgroundImage: `url('${
+                              stocks[watchedStock.ticker]?.logoURL
+                            }')`,
+                          }}
+                          className="stock-logo"
+                        ></div>
+
                         <div>{stocks[watchedStock.ticker]?.currentPrice}</div>
                         <button
+                          className='delete-button'
                           onClick={async () => {
                             await dispatch(
                               deleteTickerThunk(watchedStock.ticker)
@@ -41,7 +48,7 @@ function Watchlist() {
                             await dispatch(getAllInWatchList());
                           }}
                         >
-                          Delete
+                          Remove
                         </button>
                       </div>
                     );

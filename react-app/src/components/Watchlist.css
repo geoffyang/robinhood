@@ -1,3 +1,21 @@
+.add-to-watchlist-container {
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+}
+
+.delete-button{
+    height: 25px;
+    width:fit-content
+}
+
+.watchlist-components{
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: justify;
+}
 .stock-logo {
     height: 30px;
     width: 30px;
