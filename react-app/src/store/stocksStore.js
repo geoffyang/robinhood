@@ -20,17 +20,18 @@ export const getSingleStock = (ticker) => async dispatch => {
   };
 };
 
-// export const getMultipleStocks = (tickersList) => async dispatch => {
-//   const stocks = [];
-//   tickersList.forEach( async ticker => {
-//     const response = await fetch(`https://www.styvio.com/api/${ticker}`);
+export const getMultipleStocks = (tickersList) => async dispatch => {
+  const stocks = [];
+  tickersList.forEach( async ticker => {
+    const response = await fetch(`/api/stocks/${ticker}`);
 
-//     if (response.ok) {
-//       stocks.push(await response.json());
-//     };
-//   });
-//   dispatch(loadManyStocks(stocks));
-// };
+    if (response.ok) {
+      const json = await response.json();
+      stocks.push(json);
+    };
+  });
+  dispatch(loadManyStocks(stocks));
+};
 
 const initialState = {};
 
@@ -39,8 +40,8 @@ export default function stockReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_MULTIPLE_STOCKS:
       const multipleStocks = {};
-      action.list.forEach(stock => {
-        multipleStocks[stock.id] = stock;
+      action.stocks.forEach(stock => {
+        multipleStocks[stock.ticker] = stock;
       });
       return {
         ...multipleStocks,

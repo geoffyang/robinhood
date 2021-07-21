@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllInWatchList, deleteTickerThunk } from '../store/watchlistStore';
-import { getSingleStock } from '../store/stocksStore';
+import { getSingleStock, getMultipleStocks } from '../store/stocksStore';
 import './Watchlist.css';
+
 function Watchlist() {
     const stocks = useSelector(state => state.stocks)
     const watchlist = useSelector(state => state.watchlist);
@@ -13,30 +14,29 @@ function Watchlist() {
     },[dispatch])
 
     useEffect(()=> {
-        if(watchlist){
-
-            for(const stock in Object.values(watchlist)){
-                console.log(stock.ticker, "++++++++++++++++++++++++++++++++++++++++")
+        const watchlistValuesArray = Object.values(watchlist)
+        if(watchlistValuesArray){
+            for(const stock of watchlistValuesArray){
                 dispatch(getSingleStock(stock.ticker))
             }
+            // dispatch(getMultipleStocks(watchlistValuesArray))
         }
     },[watchlist])
-
     return (
         <div className='add-to-watchlist-container'>
             {(watchlist) ?
-                Object.keys(watchlist).map((stock)=> {
+                Object.values(watchlist).map((watchedStock)=> {
                     return (
                       <div>
-                          {console.log(stocks[stock]?.logoURL, "_________________________________________")}
-                        <div style={{backgroundImage: `url('${stocks[stock]?.logoURL}')`}}
+                        <div style={{backgroundImage: `url('${stocks[watchedStock.ticker]?.logoURL}')`}}
                              className='stock-logo'
                         ></div>
-                        <div>{watchlist[stock]?.ticker}</div>
+                        <div>{watchedStock.ticker}</div>
+                        <div>{stocks[watchedStock.ticker]?.currentPrice}</div>
                         <button
                           onClick={async () => {
                             await dispatch(
-                              deleteTickerThunk(watchlist[stock]?.ticker)
+                              deleteTickerThunk(watchedStock.ticker)
                             );
                             await dispatch(getAllInWatchList());
                           }}
