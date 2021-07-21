@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
@@ -11,9 +11,11 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import Portfolio from './components/Portfolio';
+import Splash from './components/Splash/Splash'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const user = useSelector(state => state.session.user)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,6 +24,19 @@ function App() {
       setLoaded(true);
     })();
   }, [dispatch]);
+
+  let splashPage
+  if (user) {
+    splashPage = (<ProtectedRoute path='/' exact={true} >
+      <h1>My Home Page</h1>
+      <Stock ticker={'EBAY'} />
+      <Watchlist />
+    </ProtectedRoute>)
+  } else {
+    splashPage = (<Route exact path='/'>
+      <Splash />
+    </Route>)
+  }
 
   if (!loaded) {
     return null;
@@ -43,11 +58,9 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-          <Stock ticker={'AAPL'} />
-          <Watchlist />
-        </ProtectedRoute>
+
+      {splashPage}
+
         <ProtectedRoute path='/portfolio' exact={true}>
           <Portfolio />
         </ProtectedRoute>
