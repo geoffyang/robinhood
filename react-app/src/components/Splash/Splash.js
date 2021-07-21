@@ -12,12 +12,14 @@ export default function Splash() {
             <div className="splash__body">
 
                 <div className="body__left">
-                    <p>Investing for Everyone</p>
+                    <h1 className="body__left-title">Investing for Everyone</h1>
                     <p>Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations apply.</p>
                     <div className="body__left-button">Button Placeholder</div>
-                    <p>Commissions & Free Stock Disclosures</p>
+                    <br></br>
+                    <span>Commissions & Free Stock Disclosures</span>
                 </div>
                 <div className="body__right">
+                    <img src="/splash-1.jpg" alt="phone"></img>
                 </div>
 
             </div>

@@ -1,13 +1,32 @@
 body {
     font-family: "Capsule Sans Text", sans-serif;
+    font-size: 18px;
 }
 
 .splash__body {
-    background-color: rgb(177, 249, 34);
+    background-color: rgb(249, 48, 34);
+    display: inline-flex;
+    flex-wrap: nowrap;
     margin-top: 7px;
     margin-right: auto;
     margin-left: auto;
     max-width: 100%;
-    height: 700px;
+    height: 350px;
 }
 
+.body__left {
+    background-color: rgb(177, 249, 34);
+    width: 40%;
+}
+
+.body__right {
+    width: 60%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
