@@ -1,0 +1,13 @@
+body {
+    font-family: "Capsule Sans Text", sans-serif;
+}
+
+.splash__body {
+    background-color: rgb(177, 249, 34);
+    margin-top: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    height: 700px;
+}
+
