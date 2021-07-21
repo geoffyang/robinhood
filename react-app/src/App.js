@@ -12,6 +12,8 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import Portfolio from './components/Portfolio';
 import Splash from './components/Splash/Splash'
+import Search from './components/Search';
+import SearchResults from './components/SearchResults';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -54,6 +56,9 @@ function App() {
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList />
+        </ProtectedRoute>
+        <ProtectedRoute path='/search-results/:searchedTicker' >
+          <SearchResults />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
