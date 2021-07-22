@@ -5,13 +5,13 @@ import { getSingleStock, getMultipleStocks } from '../store/stocksStore';
 import './Watchlist.css';
 
 function Watchlist() {
-    const stocks = useSelector(state => state.stocks)
-    const watchlist = useSelector(state => state.watchlist);
-    const dispatch = useDispatch();
+  const stocks = useSelector(state => state.stocks)
+  const watchlist = useSelector(state => state.watchlist);
+  const dispatch = useDispatch();
 
-    useEffect(()=> {
-        dispatch(getAllInWatchList())
-    },[dispatch])
+  useEffect(()=> {
+    dispatch(getAllInWatchList())
+  },[dispatch])
 
     useEffect(()=> {
         const watchlistValuesArray = Object.values(watchlist)
