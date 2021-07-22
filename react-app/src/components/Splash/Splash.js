@@ -7,6 +7,10 @@ import "./Splash.css"
 export default function Splash() {
 
     let history = useHistory();
+    const types = ['Learn', "Manage", "Customize"]
+
+    const [active, setActive] = useState(types[0])
+
 
     return (
         <>
@@ -85,27 +89,68 @@ export default function Splash() {
                     </div>
                     <div className="fractional-middle">
                         <div className="fractional-middle-1">
-                            HERE
+                            <div className="fractional-text">
+                                <p>Invest Any Amount</p>
+                                <span>Choose how much you want to invest, and we’ll convert from dollars to parts of a whole share.</span>
+                            </div>
                         </div>
                         <div className="fractional-middle-1">
-                            HERE
+                            <div className="fractional-text">
+                                <p>Build a Balanced Portfolio</p>
+                                <span>Customize your portfolio with pieces of different companies and funds to help reduce risk.</span>
+                            </div>
                         </div>
                         <div className="fractional-middle-1">
-                            HERE
+                            <div className="fractional-text">
+                                <p>Trade in Real Time</p>
+                                <span>Trades placed during market hours are executed at that time, so you’ll always know the share price.</span>
+                            </div>
                         </div>
-                        <div className="fractional-middle-1">
+                        <div className="fractional-middle-4">
                             <img src="/splash-3.png" alt="confetti"></img>
                         </div>
                     </div>
                     <div className="fractional-bottom"></div>
                 </div>
-
+                <br></br>
+                <br></br>
                 <div className="disclosure"><span>❗️ Fractional Shares Disclosure</span></div>
-
             </div>
 
+            <div className="tabs">
+                <div className="tabs-left">
+                    {types.map(type => {
+                        return (<button className="tabButton"
+                            key={type}
+                            active={active === type}
+                            onClick={() => setActive(type)}
+                        >
+                            {type}
+                        </button>)
+                    })}
+                </div>
+                <div className="tabs-right">
+                    RIGHT
+                </div>
+            </div>
 
         </>
 
     )
+}
+
+
+function TabGroup() {
+
+    // const [active, setActive] = useState(types[0])
+
+    return (
+
+        <>
+
+            hi
+        </>
+
+    )
+
 }
