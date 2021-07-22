@@ -1,6 +1,6 @@
 const LOAD_PORTFOLIO = "portfolio/LOAD_PORTFOLIO";
 const BUY_STOCK = "portfolio/BUY_STOCK"
-const SELL_STOCK = "portfolio/SELL_STOCK"
+
 
 
 const loadPortfolio = portfolio => ({
@@ -13,11 +13,6 @@ const addStock = stockObj => ({
     stockObj
 })
 
-const removeStock = stockObj => ({
-    type: SELL_STOCK,
-    stockObj
-})
-
 export const getPortfolio = () => async dispatch => {
     const response = await fetch('/api/portfolio-stocks/')
     if (response.ok) {
@@ -26,18 +21,16 @@ export const getPortfolio = () => async dispatch => {
     }
 }
 
-export const buyStock = (ticker, add) => async dispatch => {
+export const updateStock = (ticker, operator) => async dispatch => {
     let response
-    if(add === 'add'){
-        console.log("this should be add")
-        response = await fetch(`/api/portfolio-stocks/${ticker}/${add}`, {
+    if(operator === 'add'){
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${operator}`, {
             method: 'POST',
             // data: JSON.stringify(add),
         })
     }
     else{
-        console.log("this should be subtract")
-        response = await fetch(`/api/portfolio-stocks/${ticker}/${add}`, {
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${operator}`, {
             method: 'POST',
             // data: JSON.stringify(add),
         })
@@ -45,14 +38,6 @@ export const buyStock = (ticker, add) => async dispatch => {
     if (response.ok) {
         const purchasedStock = await response.json()
         dispatch(addStock(purchasedStock))
-    }
-}
-
-export const sellStock = ticker => async dispatch => {
-    const response = await fetch(`/api/portfolio-stocks/sell/${ticker}`)
-    if (response.ok){
-        const soldStock = await response.json()
-        dispatch(removeStock(soldStock))
     }
 }
 
@@ -68,10 +53,6 @@ export default function portfolioReducer(state = initialState, action) {
             newState = Object.assign({}, state);
             newState[action.stockObj.ticker] = action.stockObj
             return newState;
-        case SELL_STOCK:
-            newState = Object.assign({}, state)
-            delete newState[action.stockObj]
-            return newState
         default:
             return state;
     }
