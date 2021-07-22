@@ -11,8 +11,8 @@
   right: 40px;
 }
 
-.watchlist-components {
-  border: 1px solid grey;
+.watchlist-components table {
+
   border-radius: 2px;
   padding: 2px;
   margin: 2px;
