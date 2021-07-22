@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: "Capsule Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.loginform-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginform-image {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.loginform-image img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.loginform {
+  height: 100vh;
+  position: relative;
+  width: 50%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: auto 50px;
+  height: 100%;
+  width: 50%;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.input-and-label {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.input-and-label label {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.input-and-label input {
+  height: 33px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}
+
+.input-and-label input:hover {
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-and-label input:focus {
+  z-index: -1;
+  border: 1px solid rgb(0,200,5);
+  border-radius: 5px;
+  outline: none;
+}
+
+.signin-button {
+  color: white;
+  margin-top: 100px;
+  height: 50px;
+  width: 145px;
+  background-color: rgb(0,200,5);
+  border: 1px solid rgb(0,200,5);
+  border-radius: 5px;
+}
+
+.signin-button:hover {
+  background-color: rgba(0,160,4,1);
+  border: 1px solid rgba(0,160,4,1);
+}
+
+.errors p {
+  font-size: 13px;
+  font-weight: 700;
+}
