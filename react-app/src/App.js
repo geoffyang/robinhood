@@ -27,26 +27,12 @@ function App() {
     })();
   }, [dispatch]);
 
-  let splashPage
-  if (user) {
-    splashPage = (<ProtectedRoute path='/' exact={true} >
-      <h1>My Home Page</h1>
-      <Stock ticker={'EBAY'} />
-      {/* <Watchlist /> */}
-    </ProtectedRoute>)
-  } else {
-    splashPage = (<Route exact path='/'>
-      <Splash />
-    </Route>)
-  }
-
   if (!loaded) {
     return null;
   }
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
@@ -58,18 +44,23 @@ function App() {
           <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/search-results/:searchedTicker' >
+          <NavBar />
           <SearchResults />
           <Watchlist />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
-
-      {splashPage}
-
-        <ProtectedRoute path='/portfolio' exact={true}>
-          <Portfolio />
-        </ProtectedRoute>
+        {(user) ?
+          <ProtectedRoute path='/' exact={true} >
+            <NavBar />
+            <h1>My Home Page</h1>
+            <Stock ticker={'EBAY'} />
+            <Portfolio />
+            <Watchlist />
+          </ProtectedRoute>
+        :
+          <Route exact path='/'>
+            <Splash />
+          </Route>
+        }
       </Switch>
     </BrowserRouter>
   );
