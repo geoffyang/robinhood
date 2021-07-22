@@ -49,7 +49,7 @@ function Watchlist() {
                             await dispatch(getAllInWatchList());
                           }}
                         >
-                          Remove
+                          -
                         </button>
                       </div>
                     );
