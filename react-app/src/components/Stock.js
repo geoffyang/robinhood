@@ -87,10 +87,10 @@ function Stock({ ticker }) {
       </div>
       <div>
         <button onClick={async () => {
-          await dispatch(buyStock('AAPL'))
+          await dispatch(buyStock('AAPL', 'add'))
         }}>BUY STOCK</button>
         <button onClick={async () => {
-          await dispatch(sellStock('AAPL'))
+          await dispatch(buyStock('AAPL', 'subtract'))
         }}>SELL STOCK</button>
       </div>
       <WatchlistAddButton ticker={ticker} />

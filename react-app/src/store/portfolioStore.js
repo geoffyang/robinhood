@@ -26,8 +26,22 @@ export const getPortfolio = () => async dispatch => {
     }
 }
 
-export const buyStock = ticker => async dispatch => {
-    const response = await fetch(`/api/portfolio-stocks/${ticker}`)
+export const buyStock = (ticker, add) => async dispatch => {
+    let response
+    if(add === 'add'){
+        console.log("this should be add")
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${add}`, {
+            method: 'POST',
+            // data: JSON.stringify(add),
+        })
+    }
+    else{
+        console.log("this should be subtract")
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${add}`, {
+            method: 'POST',
+            // data: JSON.stringify(add),
+        })
+    }
     if (response.ok) {
         const purchasedStock = await response.json()
         dispatch(addStock(purchasedStock))
