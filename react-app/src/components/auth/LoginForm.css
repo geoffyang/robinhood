@@ -91,6 +91,7 @@ body {
 .signin-button:hover {
   background-color: rgba(0,160,4,1);
   border: 1px solid rgba(0,160,4,1);
+  cursor: pointer;
 }
 
 .errors p {
