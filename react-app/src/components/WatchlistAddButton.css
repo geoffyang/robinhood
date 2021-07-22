@@ -1,15 +1,15 @@
-.add-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
 
-.add-ticker-container{
+
+.add-ticker-container > .add-button{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     position: absolute;
-    top: 49%;
     right: 80px;
-    padding: 4px;
+}
+
+.add-button {
+  top: 49px;
+  right: 60px;
+  padding: 4px;
 }
