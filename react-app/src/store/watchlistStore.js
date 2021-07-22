@@ -37,7 +37,7 @@ export const deleteTickerThunk = (ticker) => async (dispatch) => {
   const response = await fetch(`/api/watchlist-stocks/${ticker}`, {
     method: 'DELETE',
   });
-  
+
   if (response.ok) {
     const ticker = await response.json();
     dispatch(deleteTicker(ticker));
@@ -50,7 +50,8 @@ export default function watchListReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_WATCHLIST:
       newState = Object.assign({}, state);
-      newState['watchlist'] = action.watched;
+      newState = {...action.watched}
+      // newState['watchlist'] = action.watched;
       return newState;
     case DELETE_WATCHLIST:
       newState = {...state}

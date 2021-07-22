@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSingleStock } from '../store/stocksStore';
 import { Line } from 'react-chartjs-2';
 import { buyStock, sellStock } from '../store/portfolioStore';
+import WatchlistAddButton from './WatchlistAddButton'
 
 function Stock({ ticker }) {
-  const [stockData, setStockData] = useState('dailyPrices')
+  const [timePeriod, setTimePeriod] = useState('dailyPrices')
   const [data, setData] = useState({})
-  const stocks = useSelector(state => state?.stocks);
+  const stocks = useSelector(state => state.stocks);
   const dispatch = useDispatch();
   const options = {
     scales: {
@@ -25,43 +26,55 @@ function Stock({ ticker }) {
     (async () => {
       await dispatch(getSingleStock(ticker));
     })();
-  }, [dispatch])
+  }, [dispatch, ticker])
 
   useEffect(() => {
     if (stocks[ticker]) {
       setData({
-        labels: stocks[ticker][stockData],
+        labels: stocks[ticker][timePeriod],
         datasets: [
           {
             label: ticker,
-            data: stocks[ticker][stockData],
+            data: stocks[ticker][timePeriod],
             fill: false,
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgba(255, 99, 132, 0.2)',
+            // hoverBorderWidth:8,
+            // showLine: false,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines:{color:"#000000"}
+              }],
+              yAxes:[{ display:false, gridLines:{color:"#000000"}}]
+            }
           },
         ],
       })
     }
-  }, [stockData, stocks])
+  }, [timePeriod, stocks])
 
   return (
+
+
+
     <div className='graphContainer'>
       <h1>{stocks[ticker]?.shortName}</h1>
       <div className='graphButtons'>
         <button onClick={() => {
-          setStockData('dailyPrices');
+          setTimePeriod('dailyPrices');
         }}>Today</button>
         <button onClick={() => {
-          setStockData('weeklyPrices');
+          setTimePeriod('weeklyPrices');
         }}>Weekly</button>
         <button onClick={() => {
-          setStockData('oneMonthPrices');
+          setTimePeriod('oneMonthPrices');
         }}>Monthly</button>
         <button onClick={() => {
-          setStockData('yearlyPrices');
+          setTimePeriod('yearlyPrices');
         }}>Yearly</button>
         <button onClick={() => {
-          setStockData('allTimePrices');
+          setTimePeriod('allTimePrices');
         }}>All Time</button>
       </div>
       <div className='graph'>
@@ -73,13 +86,14 @@ function Stock({ ticker }) {
         }
       </div>
       <div>
-      <button onClick={async () => {
-        await dispatch(buyStock('AAPL'))
-      }}>BUY STOCK</button>
-      <button onClick={async () => {
-        await dispatch(sellStock('AAPL'))
-      }}>SELL STOCK</button>
+        <button onClick={async () => {
+          await dispatch(buyStock('AAPL'))
+        }}>BUY STOCK</button>
+        <button onClick={async () => {
+          await dispatch(sellStock('AAPL'))
+        }}>SELL STOCK</button>
       </div>
+      <WatchlistAddButton ticker={ticker} />
     </div>
   );
 }

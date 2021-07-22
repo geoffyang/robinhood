@@ -53,3 +53,25 @@ def add_ticker_to_portfolio(ticker):
         db.session.add(purchased_stock)
         db.session.commit()
         return purchased_stock.to_dict()
+
+
+@login_required
+@portfolio_stocks_routes.route('/<ticker>')
+def sell_stock(ticker):
+    ticker = ticker.upper()
+
+    stock = PortfolioStocks.query.filter(
+        PortfolioStocks.user_id == current_user.id,
+        PortfolioStocks.ticker == ticker
+    ).one_or_none()
+
+    response = requests.get(f"https://www.styvio.com/api/{ticker}")
+    data = response.json()
+    current_price = float(data['currentPrice'][1:])
+
+
+    if stock:
+        stock.share_count -= 1
+        db.session.add(stock)
+        db.session.commit()
+        return stock.to_dict()
