@@ -1,9 +1,12 @@
 .add-to-watchlist-container > .watchlist-components {
   display: flex;
-  /* flex-direction: column; */
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
   max-width: 400px;
   padding: 2px;
+  margin: 4px;
+  align-items: center;
   /* position: relative; */
 }
 
@@ -18,7 +21,6 @@
   display: flex;
   flex-direction: row;
   padding: 2px;
-  box-shadow: lightslategray;
 }
 
 .current-price:hover {
@@ -27,18 +29,31 @@
   background-color: lawngreen;
 }
 
-.ticker-name > .ticker-name:hover {
+.ticker-name  {
   display: flex;
-  flex-direction: column;
-}
-.ticker-name:hover {
-  margin: auto;
+  flex-direction:column;
+  justify-content: left;
+  border: 1px solid grey;
+  border-radius: 6px;
 }
 
+
+.stock-logo {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  border: solid 1px rgb(29, 27, 27);
+  border-radius: 3px;
+}
+/* .stock-logo:hover {
+  border: solid 1px black;
+  border-radius: 3px;
+} */
 .delete-button > .delete-button:hover {
   height: 25px;
   width: fit-content;
   color: black;
+  border-radius: 2px;
 }
 .delete-button:hover {
   cursor: pointer;
@@ -54,13 +69,7 @@
   justify-content: space-evenly;
   text-align: justify;
 } */
-.stock-logo {
-  height: 30px;
-  width: 30px;
-  background-size: cover;
-  border: solid 1px black;
-  border-radius: 3px;
-}
+
 /* box-sizing: border-box;
   direction: ltr;
   height: 789px;
