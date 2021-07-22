@@ -27,6 +27,7 @@ function Watchlist() {
             {(watchlist) ?
                 Object.values(watchlist).map((watchedStock)=> {
                     return (
+
                       <div className="watchlist-components">
                         <div className="ticker-name">{watchedStock.ticker}</div>
                         <div
