@@ -15,8 +15,7 @@ function WatchlistAddButton({ ticker }) {
           await dispatch(getAllInWatchList());
         }}
       >
-        {" "}
-        +{" "}
+      + Add to List
       </button>
     </div>
   );

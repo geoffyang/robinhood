@@ -9,14 +9,20 @@
   overflow: hidden;
   top: 40px;
   right: 40px;
+  border: 2px solid whitesmoke;
+    -webkit-box-shadow: 8px 0px 6px -6px grey;
+	   -moz-box-shadow: 8px 0px 6px -6px grey;
+	        box-shadow: 8px 0px 6px -6px grey;
 }
 
 .watchlist-components table {
-  border: 1px solid grey;
   border-radius: 2px;
   padding: 2px;
   margin: 2px;
   align-items: right;
+}
+.watchlist-components:hover {
+  box-shadow: 24px grey;
 }
 
 .current-price {
@@ -40,7 +46,7 @@
   flex-direction:column;
   justify-content: space-around;
   border-radius: 6px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Capsule Sans Text,-apple-system,BlinkMacSystemFont,sans-serif;
   font-weight: bold;
 }
 
@@ -59,7 +65,7 @@
 } */
 .delete-button > .delete-button:hover {
   height: 25px;
-  width: fit-content;
+  width: 25px;
   color: black;
   border-radius: 2px;
 }
