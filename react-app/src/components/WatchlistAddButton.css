@@ -6,7 +6,10 @@
 
 .add-ticker-container{
     display: flex;
-    flex-direction: end;
+    flex-direction: row;
     justify-content: flex-end;
-    position: static;
+    position: absolute;
+    top: 49%;
+    right: 80px;
+    padding: 4px;
 }
