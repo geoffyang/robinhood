@@ -1,21 +1,59 @@
-.add-to-watchlist-container {
+.add-to-watchlist-container > .watchlist-components {
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: column; */
   justify-content: space-evenly;
-}
-
-.delete-button {
-  height: 25px;
-  width: fit-content;
+  max-width: 400px;
+  padding: 2px;
+  /* position: relative; */
 }
 
 .watchlist-components {
+  border: 2px solid grey;
+  border-radius: 2px;
+  box-shadow: lawngreen;
+  align-items: right;
+}
+
+.current-price > .current-price:hover {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  box-shadow: lightslategray;
+}
+
+.current-price:hover {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: lawngreen;
+}
+
+.ticker-name > .ticker-name:hover {
+  display: flex;
+  flex-direction: column;
+}
+.ticker-name:hover {
+  margin: auto;
+}
+
+.delete-button > .delete-button:hover {
+  height: 25px;
+  width: fit-content;
+  color: black;
+}
+.delete-button:hover {
+  cursor: pointer;
+  color: red;
+}
+
+/* .watchlist-components {
+  height: 789px;
+  width: 276px;
   padding: 2px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   text-align: justify;
-}
+} */
 .stock-logo {
   height: 30px;
   width: 30px;
@@ -23,3 +61,29 @@
   border: solid 1px black;
   border-radius: 3px;
 }
+/* box-sizing: border-box;
+  direction: ltr;
+  height: 789px;
+  position: relative;
+  width: 276px;
+  will-change: transform;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+} */
+
+/*
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -.1px;
+  line-height: 20px;
+  font-family: Capsule Sans Text,-apple-system,BlinkMacSystemFont,sans-serif; */
+
+/*
+  box-sizing: border-box;
+  direction: ltr;
+  height: 788px;
+  position: relative;
+  width: 276px;
+  will-change: transform;
+  overflow: hidden; */

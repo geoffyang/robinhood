@@ -27,20 +27,20 @@ function Watchlist() {
             {(watchlist) ?
                 Object.values(watchlist).map((watchedStock)=> {
                     return (
-                      <div className='watchlist-components'>
-                        <div>{watchedStock.ticker}</div>
+                      <div className="watchlist-components">
+                        <div className="ticker-name">{watchedStock.ticker}</div>
                         <div
+                          className="stock-logo"
                           style={{
                             backgroundImage: `url('${
                               stocks[watchedStock.ticker]?.logoURL
                             }')`,
                           }}
-                          className="stock-logo"
                         ></div>
 
-                        <div>{stocks[watchedStock.ticker]?.currentPrice}</div>
+                        <div className='current-price'>{stocks[watchedStock.ticker]?.currentPrice}</div>
                         <button
-                          className='delete-button'
+                          className="delete-button"
                           onClick={async () => {
                             await dispatch(
                               deleteTickerThunk(watchedStock.ticker)

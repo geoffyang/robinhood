@@ -1,12 +1,12 @@
 .add-button {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
-/* .add-ticker-container{
+.add-ticker-container{
     display: flex;
     flex-direction: end;
-    justify-content: right;
-    text-align: right;
-} */
+    justify-content: flex-end;
+    position: static;
+}
