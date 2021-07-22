@@ -29,7 +29,7 @@ img {
 }
 
 .investing-for-everyone {
-    background-color: rgb(177, 249, 34);
+    background-color: rgba(195, 244, 61, 255);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -44,7 +44,6 @@ img {
 }
 
 .investing-left {
-    background-color: rgb(177, 249, 34);
     width: 40%;
     margin-left: 15px;
     /* padding-right: 5rem; */
@@ -60,7 +59,7 @@ img {
     font-size: 24px;
     font-style: normal;
     /* font-weight: 50px; */
-    line-height: 36px;
+    line-height: 32px;
     letter-spacing: -0.24px;
     text-decoration: unset;
     margin-bottom: 1rem;
@@ -68,7 +67,21 @@ img {
 }
 
 .disclosure {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.25px;
+    font-size: 1rem;
+    height: 3rem;
+}
+
+.ipo__right .disclosure {
+    /* padding-top: 1rem; */
+    display: flex;
+    color: rgb(106, 114, 120);
+    align-items: center;
     font-weight: 700;
     font-style: normal;
     letter-spacing: -0.25px;
@@ -111,31 +124,92 @@ img {
 .ipo__right {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     height: 100%;
     width: 50%;
     margin-left: 2rem;
+}
+
+.ipo__right>p {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+    line-height: 1.5rem;
+    padding-bottom: 25px;
+}
+
+.ipo-bullets {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.ipo-bullets-icon {
+    display: flex;
+    align-items: center;
+    width: 68px;
+}
+
+.ipo-bullets-text {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 10px;
+    width: 400.5px;
+}
+
+.ipo-bullets-text p {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .title {
     font-size: 32px;
     font-style: normal;
     font-weight: 300px;
-    line-height: 40px;
+    line-height: 68px;
     letter-spacing: -0.32px;
 }
 
 .fractional {
     border-top: 1.5px solid black;
     border-bottom: 1.5px solid black;
+    height: 500px;
+    /* background-color: red; */
 }
 
-.fractional img {
+.fractional-middle {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.fractional-middle-1 {
+    display: flex;
+    width: 200px;
+}
+
+/* .fractional img {
     background-position-x: 50%;
     background-position-y: 50%;
-    height: 85px;
+    height: 600px;
+} */
+
+.buttons {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 24px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    transition: ease background-color 250ms;
+    width: 144px;
+    height: 48px;
 }
 
-div {
-    border: 1px solid black;
+.buttons:hover {
+    background-color: rgba(42, 49, 55);
 }
+
+/* div {
+    border: 1px solid black;
+} */
