@@ -4,22 +4,22 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import Search from './Search';
-
+import './NavBar.css';
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
 
   return (
     <nav>
-      <ul className='navbar contianer'>
-        <li>
+      <ul className='navbar_contianer'>
+        <li className='search_bar'>
           <Search />
         </li>
-        <li>
+        <li className='home_button'>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
         </li>
-        <li>
+        <li className='root_page'>
           <NavLink to='/portfolio' exact={true} activeClassName='active'>
             Portfolio
           </NavLink>
@@ -41,7 +41,7 @@ const NavBar = () => {
           null
         }
         {(user) ?
-          <li>
+          <li className='logout_button'>
             <LogoutButton />
           </li>
           :

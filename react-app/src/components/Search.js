@@ -52,7 +52,7 @@ function Search() {
             type="search"
             id="search-form"
             class="search-bar-input"
-            placeholder="Search Tickers"
+            placeholder="Search..."
             autoComplete="off"
           />
         </div>

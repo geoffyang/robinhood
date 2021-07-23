@@ -1,0 +1,54 @@
+
+.navbar_contianer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 3px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.search_bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.search_bar input {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+
+}
+.root_page {
+
+}
+
+.search_bar {
+
+}
+
+.home_button {
+
+}
+
+
+
+/*
+.rewards_button {
+
+}
+
+.messages_button {
+
+}
+
+.cash_balance {
+
+} */
+
+/* .account_page {
+
+} */
