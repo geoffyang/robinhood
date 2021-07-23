@@ -48,6 +48,7 @@ li {
 .splash__nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
     height: 64px;
     background-color: white;
@@ -61,7 +62,7 @@ path {
 
 #nav-dropdowns {
     box-sizing: border-box;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     display: flex;
     width: 45%;
     justify-content: space-between;
@@ -79,12 +80,15 @@ path {
 
 #nav-buttons {
     box-sizing: border-box;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
+    margin-right: 2rem;
 }
 
 #nav-buttons #login {
     background-color: white;
     color: black;
+    padding: 0px;
+    width: 90px;
 }
 
 #nav-buttons #login:hover {
@@ -110,12 +114,13 @@ path {
 .investing-for-everyone {
     background-color: rgba(195, 244, 61, 255);
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: center;
     /* margin-top: 7px; */
-    padding-right: 7rem;
-    padding-left: 1rem;
+    /* padding-right: 7rem;
+    padding-left: 1rem; */
     margin-left: -9px;
     margin-right: -9px;
     height: 600px;
@@ -124,9 +129,16 @@ path {
 
 .investing-left {
     width: 40%;
-    margin-left: 15px;
+    padding-left: 3rem;
     /* padding-right: 5rem; */
     /* height: 100%; */
+}
+
+.investing-right {
+    box-sizing: border-box;
+    width: 55%;
+    max-width: 480px;
+    margin-right:20px;
 }
 
 .investing-title {
@@ -207,6 +219,7 @@ path {
     width: 50%;
     display: flex;
     justify-content: center;
+    max-width: 550px;
 }
 
 .ipo__right {
@@ -291,93 +304,107 @@ path {
 
 .fractional-middle-4 {
     box-sizing: border-box;
-    width:200px;
+    width: 200px;
 }
-    .fractional-text p {
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 24px;
-        margin-bottom: 12px;
-    }
-    /* .fractional img {
+
+.fractional-text p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+/* .fractional img {
     background-position-x: 50%;
     background-position-y: 50%;
     height: 600px;
 } */
-    .buttons {
-        background-color: black;
-        color: white;
-        font-weight: 700;
-        padding: 5px 15px;
-        border-radius: 24px;
-        border: none;
-        outline: 0;
-        cursor: pointer;
-        transition: ease background-color 250ms;
-        width: 144px;
-        height: 48px;
-    }
-    .buttons:hover {
-        background-color: rgba(42, 49, 55);
-    }
-    .tabs {
-        box-sizing: border-box;
-        height: 600px;
-        background-color: black;
-        color: white;
-        display: flex;
-        align-items: center;
-    }
-    .tabs p, .tabs span {
-        color: white;
-    }
-    .tabs-left {
-        display: flex;
-        flex-direction: column-reverse;
-        width: 31%;
-        align-items: flex-end;
-        box-sizing: border-box;
-    }
-    .tabButton {
-        background: black;
-        color: rgb(59, 59, 59);
-        border: 0;
-        outline: 0;
-        padding: 10px 10px;
-        transition: ease border-bottom 250ms;
-        box-sizing: border-box;
-        height: 60px;
-        font-size: 24px;
-    }
-    .tabButton:focus {
-        opacity: 1;
-        color: white;
-        font-weight: 500;
-    }
-    .tabs-right {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    .tabs-right-text {
-        box-sizing: border-box;
-        width: 500px;
-        padding-left: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .tabs-right-text p {
-        font-size: 52px;
-        letter-spacing: -1.75px;
-        line-height: 60px;
-    }
-    /* .tabs-right-text span{
+
+.buttons {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 24px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    transition: ease background-color 250ms;
+    width: 144px;
+    height: 48px;
+}
+
+.buttons:hover {
+    background-color: rgba(42, 49, 55);
+}
+
+.tabs {
+    box-sizing: border-box;
+    height: 600px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.tabs p, .tabs span {
+    color: white;
+}
+
+.tabs-left {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 31%;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+.tabButton {
+    background: black;
+    color: rgb(59, 59, 59);
+    border: 0;
+    outline: 0;
+    padding: 10px 10px;
+    transition: ease border-bottom 250ms;
+    box-sizing: border-box;
+    height: 60px;
+    font-size: 24px;
+}
+
+.tabButton:focus {
+    opacity: 1;
+    color: white;
+    font-weight: 500;
+}
+
+.tabs-right {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.tabs-right-text {
+    box-sizing: border-box;
+    width: 500px;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tabs-right-text p {
+    font-size: 52px;
+    letter-spacing: -1.75px;
+    line-height: 60px;
+}
+
+/* .tabs-right-text span{
 
 } */
-    .phone-screen {
-        width: 230px;
-    }
 
-    /* div {
-        border: 1px solid black;
-    } */
+.phone-screen {
+    width: 230px;
+}
+
+/* div {
+    border: 1px solid black;
+} */
