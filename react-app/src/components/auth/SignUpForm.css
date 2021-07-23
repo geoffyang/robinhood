@@ -4,52 +4,92 @@
   font-size: 18px;
 } */
 
-.signup_form_container{
+.master-div {
   display: flex;
-  height: 100%;
-  width: 100%;
-
+  margin: 10%;
 }
-.error_field{
+
+#signup_form_container {
+  display: flex;
+  flex-direction: row;
+  margin: 80px;
+}
+
+#signup_form_container_two {
+  flex: 40%;
+  width: 40%;
+  background-color: grey;
+  margin: 100px;
 }
 
 .row_one {
-    width: 800px;
+  display: flex;
+  flex-direction: row;
+  width: 600px;
 }
+
 .user_name {
-    padding: 20px;
-    width: 100%;
-    /* display: inline-block; */
-    /* float: left; */
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
 
 .row_two {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
 }
 .email_field {
-   width: 100%
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
 
 .row_three {
-
+  display: flex;
+  flex-direction: row;
+  width: 600px;
 }
 
-.password_field{
-
+.password_field {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
 
-.row_four{
-
+.row_four {
 }
-.verify_password{
-
+.verify_password {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background-color: rgb(124, 121, 121);
 }
 
 .row_five {
-
+  display: flex;
+  flex-direction: row;
 }
-.sign_up_button{
-  /* z-index: -1;
-  border: 1px solid rgb(0,200,5);
+
+#sign_up {
+  display: flex;
+  flex-direction: column;
+
+  z-index: -1;
+  color: white;
+  border: 1px solid #00c805;
+  background-color: #00c805;
+  padding: 6px;
+  align-content: center;
+  text-align: center;
   border-radius: 5px;
-  outline: none; */
+  outline: none;
 }
