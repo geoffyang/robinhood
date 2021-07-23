@@ -19,11 +19,21 @@ const NavBar = () => {
             Home
           </NavLink>
         </li>
+
+
         <li>
-          <NavLink to='/portfolio' exact={true} activeClassName='active'>
-            Portfolio
+          <NavLink to='/asset/MSFT' >
+            MSFT
           </NavLink>
         </li>
+        
+        <li>
+          <NavLink to='/asset/CMG' >
+            CMG
+          </NavLink>
+        </li>
+
+
         {(!user) ?
           <>
             <li>
