@@ -16,7 +16,7 @@ export default function Splash() {
         <>
             <div className="splash__nav">
                 <div id="logo-div">
-                    <img src='/robinhood-logo.png' alt="logo"></img></div>
+                    <img src='https://robinhood-aa.s3.amazonaws.com/robinhood-logo.png' alt="logo"></img></div>
                 <div id="nav-dropdowns">
                     <button>Products ⌄</button>
                     <button>Learn ⌄</button>
@@ -49,7 +49,7 @@ export default function Splash() {
 
                 <div className="investing-right">
                     <div className="crop"></div>
-                    <img src="/splash-1.gif" alt="phone"></img>
+                    <img src="https://robinhood-aa.s3.amazonaws.com/splash-1.gif" alt="phone"></img>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@ export default function Splash() {
 
             <div className="ipo">
                 <div className="ipo__left">
-                    <img src="/splash-2.png" alt="airdrop"></img>
+                    <img src="https://robinhood-aa.s3.amazonaws.com/splash-2.png" alt="airdrop"></img>
                 </div>
 
                 <div className="ipo__right">
@@ -123,7 +123,7 @@ export default function Splash() {
                             </div>
                         </div>
                         <div className="fractional-middle-4">
-                            <img src="/splash-3.png" alt="confetti"></img>
+                            <img src="https://robinhood-aa.s3.amazonaws.com/splash-3.png" alt="confetti"></img>
                         </div>
                     </div>
                     <div className="fractional-bottom"></div>
@@ -160,7 +160,7 @@ export default function Splash() {
 
 
 function PhoneImage({ whichImage }) {
-    whichImage = `/${whichImage}.png`
+    whichImage = `https://robinhood-aa.s3.amazonaws.com/${whichImage}.png`
     let title, text;
 
     switch (whichImage) {
