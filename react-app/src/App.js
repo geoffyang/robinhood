@@ -44,9 +44,14 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <UsersList />
         </ProtectedRoute>
+
+
         <ProtectedRoute path='/asset/:ticker'  >
+          <NavBar/>
           <Asset />
         </ProtectedRoute>
+
+
         <ProtectedRoute path='/search-results/:searchedTicker' >
           <NavBar />
           <SearchResults />
