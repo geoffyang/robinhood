@@ -9,6 +9,8 @@
   width: 100%;
 }
 
+
+
 .search_bar {
   box-sizing: border-box;
   box-shadow: 0px 2px 2px 2px lightgray;
@@ -25,7 +27,7 @@
   width: 750px;
 }
 
-.root_page {
+.root_page:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-end, baseline;
@@ -35,20 +37,18 @@
   color: black;
 }
 
-.home_button {
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-}
 
 .rewards_button:hover {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
 }
-/*
-.messages_button {
+
+.messages_button:hover {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
@@ -58,7 +58,7 @@
   color: black;
 }
 
-.cash_balance {
+.cash_balance:hover {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
@@ -66,9 +66,9 @@
   font-size: 18px;
   font-weight: bold;
   color: black;
-} */
+}
 
-/* .account_page {
+.account_button:hover {
   display: flex;
   flex-direction: column;
   justify-content: baseline;
@@ -76,4 +76,13 @@
   font-size: 18px;
   font-weight: bold;
   color: black;
+}
+
+
+
+/* .home_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 4px;
 } */
