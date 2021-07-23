@@ -29,6 +29,84 @@ img {
     width: 100%;
 }
 
+ul {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 540px;
+    list-style-position: outside;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+li {
+    margin-left: 48px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.splash__nav {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 64px;
+    background-color: white;
+    /* box-shadow: 0 5px 0px 10 black; */
+    border-bottom: 1px solid darkgray;
+}
+
+path {
+    height: 30px;
+}
+
+#nav-dropdowns {
+    box-sizing: border-box;
+    margin-left: 2rem;
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+}
+
+#nav-dropdowns button {
+    background-color: white;
+    border: 0;
+    outline: 0;
+}
+
+#nav-dropdowns button:hover {
+    color: rgb(0, 180, 0)
+}
+
+#nav-buttons {
+    box-sizing: border-box;
+    margin-left: 2rem;
+}
+
+#nav-buttons #login {
+    background-color: white;
+    color: black;
+}
+
+#nav-buttons #login:hover {
+    color: rgb(0, 200, 0);
+}
+
+#nav-buttons #signup {
+    background-color: rgb(0, 200, 0);
+    color: black;
+}
+
+#nav-buttons #signup:hover {
+    background-color: rgb(0, 180, 5)
+}
+
+#logo-div {
+    box-sizing: border-box;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
 .investing-for-everyone {
     background-color: rgba(195, 244, 61, 255);
     display: flex;
@@ -56,6 +134,16 @@ img {
     margin-bottom: 1rem;
 }
 
+.crop {
+    position: absolute;
+    z-index: 3;
+    box-sizing: border-box;
+    border: black;
+    background-color: rgba(195, 244, 61, 255);
+    width: 100%;
+    height: 5px;
+}
+
 .investing-text {
     font-size: 24px;
     font-style: normal;
@@ -68,7 +156,7 @@ img {
 }
 
 .disclosure {
-    /* padding-top: 1rem; */
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     font-weight: 700;
@@ -112,11 +200,10 @@ img {
     margin-top: 7px;
     /* margin-right: 5rem;
     margin-left: 5rem; */
-    height: 600px;
+    height: 700px;
 }
 
 .ipo__left {
-    border-color: red;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -153,8 +240,11 @@ img {
     display: flex;
     flex-direction: column;
     align-items: left;
+    justify-content: center;
     padding-left: 10px;
     width: 400.5px;
+    box-sizing: border-box;
+    height: 120px;
 }
 
 .ipo-bullets-text p {
@@ -199,72 +289,95 @@ img {
     padding-right: 4rem;
 }
 
-.fractional-text p {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    margin-bottom: 12px;
+.fractional-middle-4 {
+    box-sizing: border-box;
+    width:200px;
 }
-
-/* .fractional img {
+    .fractional-text p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+    /* .fractional img {
     background-position-x: 50%;
     background-position-y: 50%;
     height: 600px;
 } */
+    .buttons {
+        background-color: black;
+        color: white;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-radius: 24px;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        transition: ease background-color 250ms;
+        width: 144px;
+        height: 48px;
+    }
+    .buttons:hover {
+        background-color: rgba(42, 49, 55);
+    }
+    .tabs {
+        box-sizing: border-box;
+        height: 600px;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+    .tabs p, .tabs span {
+        color: white;
+    }
+    .tabs-left {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 31%;
+        align-items: flex-end;
+        box-sizing: border-box;
+    }
+    .tabButton {
+        background: black;
+        color: rgb(59, 59, 59);
+        border: 0;
+        outline: 0;
+        padding: 10px 10px;
+        transition: ease border-bottom 250ms;
+        box-sizing: border-box;
+        height: 60px;
+        font-size: 24px;
+    }
+    .tabButton:focus {
+        opacity: 1;
+        color: white;
+        font-weight: 500;
+    }
+    .tabs-right {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .tabs-right-text {
+        box-sizing: border-box;
+        width: 500px;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tabs-right-text p {
+        font-size: 52px;
+        letter-spacing: -1.75px;
+        line-height: 60px;
+    }
+    /* .tabs-right-text span{
 
-.buttons {
-    background-color: black;
-    color: white;
-    font-weight: 700;
-    padding: 5px 15px;
-    border-radius: 24px;
-    border: none;
-    outline: 0;
-    cursor: pointer;
-    transition: ease background-color 250ms;
-    width: 144px;
-    height: 48px;
-}
+} */
+    .phone-screen {
+        width: 230px;
+    }
 
-.buttons:hover {
-    background-color: rgba(42, 49, 55);
-}
-
-.tabs {
-    box-sizing: border-box;
-    height: 600px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.tabs p, .tabs span {
-    color: white;
-}
-
-.tabs-left{
-    display: flex;
-    flex-direction: column;
-}
-
-.tabButton {
-    background: black;
-    color: rgb(71, 68, 68);
-    border: 0;
-    outline: 0;
-    border-bottom: 2px solid transparent;
-    padding: 10px 30px;
-    transition: ease border-bottom 250ms;
-}
-
-.tabButton:active {
-    border-bottom: 2px solid white;
-    opacity: 1;
-    color: white;
-}
-
-div {
-    border: 1px solid black;
-}
+    /* div {
+        border: 1px solid black;
+    } */
