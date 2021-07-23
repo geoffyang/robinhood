@@ -103,8 +103,17 @@ const SignUpForm = () => {
           </div>
         </form>
       </div>
+
       <div id="signup_form_container_two">
-        <h1>hi</h1>
+        <h2>Commission-free trading</h2>
+        <div className="row_six">
+          <div className="column_text"></div>
+          <p id='p_one'>
+            Break free from commission-fees and make unlimited commission-free
+            trades in stocks, funds, and options with Robinhood Financial. Other
+            fees may apply. View our fee schedule to learn more.
+          </p>
+        </div>
       </div>
     </div>
   );
