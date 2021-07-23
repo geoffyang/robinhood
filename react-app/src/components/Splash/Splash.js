@@ -7,14 +7,29 @@ import "./Splash.css"
 export default function Splash() {
 
     let history = useHistory();
-    const types = ['Learn', "Manage", "Customize"]
-
+    const types = ["Customize", "Manage", "Learn"]
     const [active, setActive] = useState(types[0])
 
+    // const downCaret = (<svg><path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z"></path></svg>)
 
     return (
         <>
             <div className="splash__nav">
+                <div id="logo-div">
+                    <img src='/robinhood-logo.png' alt="logo"></img></div>
+                <div id="nav-dropdowns">
+                    <button>Products ⌄</button>
+                    <button>Learn ⌄</button>
+                    <button>Support ⌄</button>
+                    <button>Who we are ⌄</button></div>
+                <div id="nav-buttons">
+                    <button className="buttons" id="login" onClick={() => history.push('/sign-up')}>
+                        Log In
+                    </button>
+                    <button className="buttons" id="signup"  onClick={() => history.push('/sign-up')}>
+                        Sign Up
+                    </button>
+                </div>
             </div>
             <div className="investing-for-everyone">
 
@@ -33,6 +48,7 @@ export default function Splash() {
                 </div>
 
                 <div className="investing-right">
+                    <div className="crop"></div>
                     <img src="/splash-1.gif" alt="phone"></img>
                 </div>
             </div>
@@ -118,20 +134,23 @@ export default function Splash() {
             </div>
 
             <div className="tabs">
+
                 <div className="tabs-left">
                     {types.map(type => {
-                        return (<button className="tabButton"
-                            key={type}
-                            active={active === type}
-                            onClick={() => setActive(type)}
-                        >
-                            {type}
-                        </button>)
+                        return (
+                            <button className="tabButton"
+                                key={type}
+                                autoFocus
+                                onClick={() => setActive(type)}
+                            >
+                                {type}
+                            </button>
+                        )
                     })}
                 </div>
-                <div className="tabs-right">
-                    RIGHT
-                </div>
+
+                <PhoneImage whichImage={active} />
+
             </div>
 
         </>
@@ -140,17 +159,39 @@ export default function Splash() {
 }
 
 
-function TabGroup() {
+function PhoneImage({ whichImage }) {
+    whichImage = `/${whichImage}.png`
+    let title, text;
 
-    // const [active, setActive] = useState(types[0])
+    switch (whichImage) {
+        case '/Learn.png':
+            title = "Learn As You Grow"
+            text = "Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don’t have)."
+            break;
+        case "/Manage.png":
+            title = "Manage Your Portfolio"
+            text = "Keep your portfolio in your pocket. Everything you need to manage your assets is available in a single app."
+            break;
+        case "/Customize.png":
+            title = "Keep Tabs on Your Money"
+            text = "Set up customized news and notifications to stay on top of your assets as casually or as relentlessly as you like. Controlling the flow of info is up to you."
+            break;
+        default:
+            title = "Learn As You Grow"
+            text = "Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don’t have)."
+    }
 
     return (
-
-        <>
-
-            hi
-        </>
-
+        <div className="tabs-right">
+            <div className="phone-screen">
+                <img src={whichImage} alt="phoneScreen"></img>
+            </div>
+            <div className="tabs-right-text">
+                <p>{title}</p>
+                <br></br>
+                <span>{text}</span>
+            </div>
+        </div>
     )
 
 }
