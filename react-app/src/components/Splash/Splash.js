@@ -23,7 +23,7 @@ export default function Splash() {
                     <button>Support ⌄</button>
                     <button>Who we are ⌄</button></div>
                 <div id="nav-buttons">
-                    <button className="buttons" id="login" onClick={() => history.push('/sign-up')}>
+                    <button className="buttons" id="login" onClick={() => history.push('/login')}>
                         Log In
                     </button>
                     <button className="buttons" id="signup"  onClick={() => history.push('/sign-up')}>
