@@ -34,7 +34,7 @@ const LoginForm = () => {
   return (
     <div className='loginform-container'>
       <div className='loginform-image'>
-        <img src="/robinhood-login-image.jpg"></img>
+        <img src="https://robinhood-aa.s3.amazonaws.com/robinhood-login-image.jpg" alt="login"></img>
       </div>
       <div className='loginform'>
         <div className='login'>
