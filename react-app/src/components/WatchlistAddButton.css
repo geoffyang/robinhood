@@ -1,0 +1,21 @@
+
+
+.add-ticker-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    right: 80px;
+}
+
+.add-button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  top: 49px;
+  right: 60px;
+  padding: 4px;
+  -webkit-box-shadow: 0 8px 6px -6px grey;
+	   -moz-box-shadow: 0 8px 6px -6px grey;
+	        box-shadow: 0 8px 6px -6px grey;
+}
