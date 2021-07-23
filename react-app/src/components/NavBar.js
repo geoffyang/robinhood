@@ -10,43 +10,35 @@ const NavBar = () => {
 
   return (
     <nav>
-      <ul className='navbar_contianer'>
-        <li className='search_bar'>
+      <ul className="navbar_contianer">
+        <li className="search_bar">
           <Search />
         </li>
-        <li className='home_button'>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
+        <li className="rewards_button">
+         Rewards
         </li>
-        <li className='root_page'>
-          <NavLink to='/portfolio' exact={true} activeClassName='active'>
+        <li className="root_page">
             Portfolio
-          </NavLink>
         </li>
-        {(!user) ?
+        {!user ? (
           <>
             <li>
-              <NavLink to='/login' exact={true} activeClassName='active'>
+              <NavLink to="/login" exact={true} activeClassName="active">
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink to='/sign-up' exact={true} activeClassName='active'>
+              <NavLink to="/sign-up" exact={true} activeClassName="active">
                 Sign Up
               </NavLink>
             </li>
           </>
-          :
-          null
-        }
-        {(user) ?
-          <li className='logout_button'>
+        ) : null}
+        {user ? (
+          <li className="logout_button">
             <LogoutButton />
           </li>
-          :
-          null
-        }
+        ) : null}
       </ul>
     </nav>
   );
