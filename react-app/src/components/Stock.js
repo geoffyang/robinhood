@@ -58,7 +58,7 @@ function Stock({ ticker }) {
 
   return (
     <div className="graphContainer">
-      <h1>{stocks[ticker]?.shortName}</h1>
+      <h1 id='stock_name'>{stocks[ticker]?.shortName}</h1>
       <div className="graphButtons">
         <div className="graphButton1">
           <button

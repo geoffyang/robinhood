@@ -12,12 +12,17 @@ canvas {
   flex-direction: initial;
   justify-content: center;
 } */
-.graphContainer {
+
+#stock_name {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 125px;
-  margin: 50px;
+  flex-direction: row;
+  margin: 25px;
+  padding: 25px;
+}
+
+.graphContainer {
+  padding: 50px;
+  margin: 100px 100px;
 }
 
 .graph {
@@ -33,10 +38,9 @@ canvas {
   float: left;
   width: 20%;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
-
 
 .graphButton1 {
   display: flex;
@@ -44,8 +48,9 @@ canvas {
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 .graphButton2 {
@@ -54,8 +59,9 @@ canvas {
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 .graphButton3 {
@@ -63,9 +69,10 @@ canvas {
   flex-direction: row;
   justify-content: space-around;
   float: left;
+  margin: 4px;
   width: 20%;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 .graphButton4 {
@@ -74,23 +81,31 @@ canvas {
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 
 .daily_prices {
-
+  background: #ffff;
+  border-radius: 3px;
 }
 .weekly_prices {
-
+  background: #ffff;
+  border-radius: 3px;
 }
 .one_month_prices {
-
+  background: #ffff;
+  border-radius: 3px;
 }
-.yearly_prices{
-
+.yearly_prices {
+  background: #ffff;
+  border-radius: 3px;
 }
-.all_time_prices{
-
+.all_time_prices {
+  display: flex;
+  flex-direction: row;
+  background: #ffff;
+  border-radius: 3px;
 }
