@@ -6,6 +6,7 @@
     justify-content: flex-end;
     position: absolute;
     right: 80px;
+    top: 240px;
 }
 
 .add-button {
@@ -15,7 +16,13 @@
   top: 49px;
   right: 60px;
   padding: 4px;
-  -webkit-box-shadow: 0 8px 6px -6px grey;
-	   -moz-box-shadow: 0 8px 6px -6px grey;
-	        box-shadow: 0 8px 6px -6px grey;
+  border: 1px solid #b4bdc2;
+  color: black;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 8px 6px -6px #b4bdc2;
+	   -moz-box-shadow: 0 8px 6px -6px #b4bdc2;
+	        box-shadow: 0 8px 6px -6px #b4bdc2;
+}
+.add-button:hover {
+  background: #ffff;
 }

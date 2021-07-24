@@ -6,17 +6,18 @@
   padding: 0px;
   font-size: 18px;
 }
-
+/*
 canvas {
   display: flex;
   flex-direction: initial;
   justify-content: center;
-}
+} */
 .graphContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 125px;
+  margin: 50px;
 }
 
 .graph {
