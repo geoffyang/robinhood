@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    font-family: "Capsule Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+.navbar_contianer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 3px;
+  margin: 2px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+
+
+.search_bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 6px;
+}
+
+.search_bar input {
+  display: flex;
+  flex-direction: row;
+  width: 750px;
+}
+
+.root_page:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end, baseline;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+
+.rewards_button:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.messages_button:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.cash_balance:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.account_button:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around, baseline;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+/* .home_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 4px;
+} */

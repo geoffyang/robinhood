@@ -1,0 +1,5 @@
+.logout_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}

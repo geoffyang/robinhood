@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  font-family: "Capsule Sans Display", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+}
+/*
+canvas {
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+} */
+.graphContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 125px;
+  margin: 50px;
+}
+
+.graph {
+  display: flex;
+  flex-direction: center;
+  max-width: 40%;
+}
+
+.graphButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  width: 20%;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+
+.graphButton1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  width: 20%;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.graphButton2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  width: 20%;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.graphButton3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  width: 20%;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.graphButton4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  float: left;
+  width: 20%;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.daily_prices {
+
+}
+.weekly_prices {
+
+}

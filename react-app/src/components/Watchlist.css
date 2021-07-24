@@ -1,8 +1,16 @@
+* {
+    box-sizing: border-box;
+    font-family: "Capsule Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
 .add-to-watchlist-container {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  padding: 0 15px;
+  padding: 15px 15px;
   margin: 0px;
   align-items: center;
   /* overflow: hidden; */
@@ -61,7 +69,7 @@
   background-size: cover;
   border: solid 1px rgb(29, 27, 27);
   border-radius: 2px;
-  margin: 2px;
+  margin: 3px;
   align-content: center;
 }
 /* .stock-logo:hover {
@@ -72,16 +80,23 @@
   height: 25px;
   width: 25px;
   color: black;
+  border: 1px solid #b4bdc2;
+  background: #ffff;
   border-radius: 15px;
   justify-content: right;
   text-align: center;
 
 }
 .delete-button:hover {
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px 1px #b4bdc2;
   cursor: pointer;
   color: red;
+  border: 1px solid #b4bdc2;
   font-weight: bold;
 }
+
+
 
 /* .watchlist-components {
   height: 789px;
