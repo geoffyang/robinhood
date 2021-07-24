@@ -33,6 +33,9 @@ export default function Asset() {
                 <div className="titles">About</div >
                 <div id="company-description">
                     {stock?.companyDescription.slice(0, 500)} <span style={{ "color": "rgb(0,200,5)", "font-weight": "700" }}>Read More</span>
+                    <br></br>
+                    <br></br>
+
                 </div>
                 <div className={"about"}>
                     <div><p>Top Holder</p><span>{stock?.holder0}</span></div>
@@ -49,13 +52,17 @@ export default function Asset() {
                 </div >
 
                 <div className="titles">News</div >
-                <div>
+                <div id="news-container">
                     {newsArray.map(id => {
                         return (
                             <div className={"news-div"} key={`news${id}`}>
-                                <span>{stock?.[`newsSource${id}`]} 5h</span>
-                                <p>{stock?.[`newsArticle${id}`].slice(0, 50)}...</p>
-                                <p>{stock?.[`newsLink${id}`]}</p>
+                                <span style={{"font-size":"13", "font-weight":"500"}}>{stock?.[`newsSource${id}`]} </span>
+
+                                <span style={{"font-size":"13", "font-weight":"400", "color":"rgb(111,120,126)"}}>{stock?.[`newsDate${id}`].slice(0,7)}</span>
+
+                                <div className={"news-headline"}>{stock?.[`newsArticle${id}`].slice(0, 50)}...</div>
+
+                                <div className={"news-link"}>{stock?.[`newsLink${id}`].slice(0,66)} ...</div>
                             </div>
                         )
                     })}

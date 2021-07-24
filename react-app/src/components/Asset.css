@@ -42,7 +42,6 @@ img {
     padding-bottom: 15px;
     margin-bottom: 24px;
     padding-top: 90px;
-
 }
 
 #asset-container {
@@ -85,6 +84,34 @@ img {
     font-weight: 400;
     line-height: 20px;
     padding-right: 1.5rem;
+}
+
+#news-container {
+    display: flex;
+    flex-flow: column;
+
+}
+
+.news-div{
+    height:134px;
+}
+
+#news-container span {
+    letter-spacing: -0.1px;
+    line-height: 20px;
+}
+
+.news-headline {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin:4px 0
+}
+
+.news-link{
+    color:rgb(106,114,120);
+    font-size:13px;
+    
 }
 
 /* div {
