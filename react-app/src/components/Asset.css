@@ -30,12 +30,42 @@ img {
     width: 100%;
 }
 
-.about,
-.key-statistics{
+.titles {
+    font-size: 24px;
+    letter-spacing: -0.33px;
+    line-height: 32px;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    margin-bottom: 24px;
+}
+
+#asset-container {
+    box-sizing: border-box;
+    width: 70%;
+    padding-left: 1rem;
+}
+
+#chart {
+    box-sizing: border-box;
+    min-height: 400px;
+}
+
+.company-description {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing:-0.1px;
+    font-family: "Capsule Sans Text";
+}
+.about, .key-statistics {
     display: flex;
     flex-wrap: nowrap;
-
+    width: 25%;
 }
+
 
 /* div{
     border: 1px solid lightgray;
