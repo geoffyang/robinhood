@@ -13,12 +13,13 @@ const NavBar = () => {
         <li className="search_bar">
           <Search />
         </li>
-
+        <li className="fake_links_container">
           <li className="rewards_button">Rewards</li>
           <li className="root_page">Portfolio</li>
           <li className="cash_balance">Cash</li>
           <li className="messages_button">Messages</li>
-
+          <li className="account_button">Account</li>
+        </li>
         {!user ? (
           <>
             <li>
@@ -33,7 +34,7 @@ const NavBar = () => {
             </li>
           </>
         ) : null}
-        {user ? <li className="account_button">Account</li> : null}
+        {/* {user ? <li className="account_button">Account</li> : null} */}
       </ul>
     </nav>
   );
