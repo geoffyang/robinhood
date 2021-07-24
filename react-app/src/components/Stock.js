@@ -119,7 +119,7 @@ function Stock({ ticker }) {
         )}
       </div>
       <div>
-        <button
+        {/* <button
           onClick={async () => {
             await dispatch(updateStock(ticker, "add"));
             await dispatch(
@@ -145,7 +145,7 @@ function Stock({ ticker }) {
           }}
         >
           Add $100
-        </button>
+        </button> */}
       </div>
       <WatchlistAddButton ticker={ticker} />
     </div>
