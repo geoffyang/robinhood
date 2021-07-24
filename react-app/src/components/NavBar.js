@@ -13,37 +13,13 @@ const NavBar = () => {
         <li className="search_bar">
           <Search />
         </li>
-<<<<<<< HEAD
-        {/* <div className="fake_links_container"> */}
+
           <li className="rewards_button">Rewards</li>
           <li className="root_page">Portfolio</li>
           <li className="cash_balance">Cash</li>
           <li className="messages_button">Messages</li>
 
         {!user ? (
-=======
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
-
-
-        <li>
-          <NavLink to='/asset/MSFT' >
-            MSFT
-          </NavLink>
-        </li>
-        
-        <li>
-          <NavLink to='/asset/CMG' >
-            CMG
-          </NavLink>
-        </li>
-
-
-        {(!user) ?
->>>>>>> main
           <>
             <li>
               <NavLink to="/login" exact={true} activeClassName="active">

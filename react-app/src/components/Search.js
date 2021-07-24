@@ -58,7 +58,7 @@ function Search() {
         </div>
         <button
           type="button"
-          class="search-button"
+          className="search-button"
           onClick={handleClick}
         >
           <i class="search-icon">search</i>
