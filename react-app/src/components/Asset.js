@@ -32,11 +32,11 @@ export default function Asset() {
                 </div>
                 <div className="titles">About</div >
                 <div id="company-description">
-                    {stock?.companyDescription.slice(0, 500)} Read More
+                    {stock?.companyDescription.slice(0, 500)} <span style={{ "color": "rgb(0,200,5)", "font-weight": "700" }}>Read More</span>
                 </div>
                 <div className={"about"}>
                     <div><p>Top Holder</p><span>{stock?.holder0}</span></div>
-                    <div><p>Headquarters</p><span>{stock?.companyAdress}</span></div>
+                    <div><p>Headquarters</p><span>{stock?.companyAdress.slice(0, 11)}</span></div>
                     <div><p>YTD Price</p><span>{stock?.percentTextYear}</span></div>
                     <div><p>Analyst Score</p><span>{stock?.tradeWords}</span></div>
                 </div>
@@ -49,17 +49,17 @@ export default function Asset() {
                 </div >
 
                 <div className="titles">News</div >
-                {
-                    newsArray.map(id => {
+                <div>
+                    {newsArray.map(id => {
                         return (
-                            <div key={`news${id}`}>
+                            <div className={"news-div"} key={`news${id}`}>
                                 <span>{stock?.[`newsSource${id}`]} 5h</span>
                                 <p>{stock?.[`newsArticle${id}`].slice(0, 50)}...</p>
                                 <p>{stock?.[`newsLink${id}`]}</p>
                             </div>
                         )
-                    })
-                }
+                    })}
+                </div>
 
 
             </div>
