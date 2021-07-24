@@ -35,41 +35,38 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/login' exact={true}>
+        <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
+        <ProtectedRoute path="/users" exact={true}>
           <UsersList />
         </ProtectedRoute>
 
-
-        <ProtectedRoute path='/asset/:ticker'  >
-          <NavBar/>
+        <ProtectedRoute path="/asset/:ticker">
+          <NavBar />
           <Asset />
         </ProtectedRoute>
 
-
-        <ProtectedRoute path='/search-results/:searchedTicker' >
+        <ProtectedRoute path="/search-results/:searchedTicker">
           <NavBar />
           <SearchResults />
           <Watchlist />
         </ProtectedRoute>
-        {(user) ?
-          <ProtectedRoute path='/' exact={true} >
+        {user ? (
+          <ProtectedRoute path="/" exact={true}>
             <NavBar />
-            <h1>My Home Page</h1>
-            <Stock ticker={'EBAY'} />
+            <Stock ticker={"EBAY"} />
             <Portfolio />
             <Watchlist />
           </ProtectedRoute>
-        :
-          <Route exact path='/'>
+        ) : (
+          <Route exact path="/">
             <Splash />
           </Route>
-        }
+        )}
       </Switch>
     </BrowserRouter>
   );
