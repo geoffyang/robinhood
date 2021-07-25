@@ -47,9 +47,7 @@
   left: 30px;
   top: 0px;
 }
-#logo-container:hover{
-  color: green;
-}
+
 #logo-container svg{
   width: 75px;
 }
