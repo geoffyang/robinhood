@@ -12,50 +12,93 @@ canvas {
   flex-direction: initial;
   justify-content: center;
 } */
-.graphContainer {
+
+/* canvas {
+  height: 100%;
+  width: 100%;
+} */
+
+#stock_name {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 125px;
-  margin: 50px;
+  /* margin: 40px; */
+  padding: 35px;
+  max-width: 500px;
 }
 
-.graph {
+.graphContainer {
+  position: relative;
+  padding: 50px;
+  padding-right: 250px;
+  /* margin: 100px; */
+  max-width: 60%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* .graph {
   display: flex;
   flex-direction: center;
   max-width: 40%;
-}
+  height: 40%;
+} */
 
-.graphButtons {
+
+.graphButtons{
+  width: 25%;
+  margin-top:15px;
+  padding-left: 35px;
+}
+.graphButton{
+  width:18%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin: 0 1%;
+  cursor: pointer;
+}
+.graphButton:hover{
+  background-color: black;
+  color: white;
+}
+.ticker-container-outer{
+  max-width: 60%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-right: 300px;
+}
+.ticker-container-inner{
+  width: 250px;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+/* .button-selected{
+  background-color: black;
+  color: white;
+} */
+/* .graphButton1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
-}
-
-
-.graphButton1 {
+} */
+/* .graphButton2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
-  border-radius: 4px;
-}
-.graphButton2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  float: left;
-  width: 20%;
-  padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 .graphButton3 {
@@ -63,9 +106,10 @@ canvas {
   flex-direction: row;
   justify-content: space-around;
   float: left;
+  margin: 4px;
   width: 20%;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
 }
 .graphButton4 {
@@ -74,14 +118,31 @@ canvas {
   justify-content: space-around;
   float: left;
   width: 20%;
+  margin: 4px;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #b4bdc2;
   border-radius: 4px;
-}
-
+} */
+/*
 .daily_prices {
-
+  background: #ffff;
+  border-radius: 3px;
 }
 .weekly_prices {
-
+  background: #ffff;
+  border-radius: 3px;
 }
+.one_month_prices {
+  background: #ffff;
+  border-radius: 3px;
+}
+.yearly_prices {
+  background: #ffff;
+  border-radius: 3px;
+}
+.all_time_prices {
+  display: flex;
+  flex-direction: row;
+  background: #ffff;
+  border-radius: 3px;
+} */

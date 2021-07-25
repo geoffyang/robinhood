@@ -21,8 +21,8 @@ function Portfolio() {
 
   return (
     <>
-      <div>
-        <div>
+      <div className="ticker-container-outer">
+        <div className="ticker-container-inner">
           <table><tbody>
             <tr>
               <td>TICKER</td>
