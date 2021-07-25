@@ -56,13 +56,13 @@ function Search() {
             autoComplete="off"
           />
         </div>
-        <button
+        {/* <button
           type="button"
           className="search-button"
           onClick={handleClick}
         >
           <i class="search-icon">search</i>
-        </button>
+        </button> */}
       </div>
       <div className="suggested-search-box">
         {/* {tickersShown} */}
