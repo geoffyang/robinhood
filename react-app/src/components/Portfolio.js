@@ -14,10 +14,10 @@ function Portfolio() {
   }, [dispatch])
 
   useEffect(() => {
-    for(const stock in portfolio){
+    for (const stock in portfolio) {
       dispatch(getSingleStock(stock))
     }
-  },[portfolio])
+  }, [portfolio])
 
   return (
     <>

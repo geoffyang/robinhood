@@ -14,11 +14,12 @@ svg {
   box-sizing: border-box;
   max-height: 64px;
   /* position: fixed; */
+  /* position:absolute; */
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #magnifier {
@@ -32,7 +33,10 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: ;
+}
+
+#search-container:focus-within {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px -12px 12px 0px, rgba(0, 0, 0, 0.06) 0px 12px 12px 0px, rgba(0, 0, 0, 0.02) 0px -12px 12px, rgba(0, 0, 0, 0.02) 0px 12px 12px;
 }
 
 #search_bar {

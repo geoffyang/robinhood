@@ -55,6 +55,8 @@ function App() {
           <SearchResults />
           <Watchlist />
         </ProtectedRoute>
+
+
         {user ? (
           <ProtectedRoute path="/" exact={true}>
             <NavBar />
@@ -67,6 +69,8 @@ function App() {
             <Splash />
           </Route>
         )}
+
+        
       </Switch>
     </BrowserRouter>
   );

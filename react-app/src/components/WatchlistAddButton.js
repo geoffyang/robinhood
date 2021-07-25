@@ -7,7 +7,8 @@ function WatchlistAddButton({ ticker }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="add-ticker-container">
+    // <div className="add-ticker-container">
+
       <button
         className="add-button"
         onClick={async () => {
@@ -15,9 +16,11 @@ function WatchlistAddButton({ ticker }) {
           await dispatch(getAllInWatchList());
         }}
       >
-      + Add to List
+        ✔︎ Add {ticker} to Watchlist
       </button>
-    </div>
+
+
+    // </div>
   );
 }
 export default WatchlistAddButton;

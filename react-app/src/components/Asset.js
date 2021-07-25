@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleStock } from '../store/stocksStore';
 import { useParams } from "react-router-dom";
+import BuyPanel from "./BuyPanel"
 import "./Asset.css"
 
 export default function Asset() {
@@ -72,30 +73,9 @@ export default function Asset() {
 
             </div>
             <div id="right-panel">
-                <div id="buy-panel">
-                    <div id="buy-1">Buy {ticker}
-                    </div>
 
-                    <div id="buy-2">
-                        <span>Cur. Quantity</span>
-                        <span>{ }</span>
-                    </div>
+                <BuyPanel ticker={ ticker}/>
 
-                    <div id="buy-3">
-                        <button id='buy'>Buy 1</button>
-                        <br></br>
-                        <button style={{ "background-color": "salmon" }} id='sell'>Sell 1</button>
-                    </div>
-
-                    <div id="buy-4">
-                        ${user.cash_balance} buying power available
-                    </div>
-
-                </div>
-                <br></br>
-                <div id="watchlist-wrapper">
-                    <button id='watchlist'>✔︎ Add {ticker} to Watchlist</button>
-                </div>
             </div>
         </div>
     )
