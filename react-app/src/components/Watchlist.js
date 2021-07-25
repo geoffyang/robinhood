@@ -22,6 +22,8 @@ function Watchlist() {
       // dispatch(getMultipleStocks(watchlistValuesArray))
     }
   }, [watchlist]);
+
+  
   return (
     <div className="add-to-watchlist-container">
       {watchlist ? (
