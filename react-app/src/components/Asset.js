@@ -25,7 +25,7 @@ export default function Asset() {
     return (
         <div id="mega-container">
             <div id="asset-container" >
-                <div id="chart" ><h1>CHART PLACEHOLDER</h1>
+                <div id="chart" ><h1>{ticker} CHART </h1>
                     <div>{stock?.ticker}</div>
                     <div>{stock?.shortName}</div>
                     <div>{stock?.currentPrice}</div>
@@ -47,7 +47,7 @@ export default function Asset() {
                 <div className="titles">Key Statistics</div >
                 <div className={"key-statistics"}>
                     <div><p>Market Cap</p><span>{stock?.marketCap.toString().slice(0, 3)}M</span></div>
-                    <div><p>Price-Earnings Ratio</p><span>38.94</span></div>
+                    <div><p style={{"padding-right":"4px"}}>Price-Earnings Ratio</p><span>38.94</span></div>
                     <div><p>Dividend Yield</p><span>0.77</span></div>
                     <div><p>Average Volume</p><span>27.24M</span></div>
                 </div >
@@ -57,9 +57,9 @@ export default function Asset() {
                     {newsArray.map(id => {
                         return (
                             <div className={"news-div"} key={`news${id}`}>
-                                <span style={{ "font-size": "13", "font-weight": "500" }}>{stock?.[`newsSource${id}`]} </span>
+                                <span style={{ "font-size": "13px", "font-weight": "500" }}>{stock?.[`newsSource${id}`]} </span>
 
-                                <span style={{ "font-size": "13", "font-weight": "400", "color": "rgb(111,120,126)" }}>{stock?.[`newsDate${id}`].slice(0, 7)}</span>
+                                <span style={{ "font-size": "13px", "font-weight": "400", "color": "rgb(111,120,126)" }}>{stock?.[`newsDate${id}`].slice(0, 7).replace("-"," ")}</span>
 
                                 <div className={"news-headline"}>{stock?.[`newsArticle${id}`].slice(0, 50)}...</div>
 

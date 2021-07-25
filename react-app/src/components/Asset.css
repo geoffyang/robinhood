@@ -62,6 +62,7 @@ img {
 #chart {
     box-sizing: border-box;
     min-height: 350px;
+    background-color: lightgreen;
 }
 
 #company-description {
@@ -193,7 +194,7 @@ img {
     font-weight: 600;
     height: 48px;
     border-radius: 4px;
-    width:100%
+    width: 100%
 }
 
 #buy-4 {
