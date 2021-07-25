@@ -113,10 +113,10 @@ function Stock({ ticker }) {
           </div>
         </div>
         <div>
-         
+
         </div>
       </div>
-      <WatchlistAddButton ticker={ticker} />
+
     </div>
   );
 }
