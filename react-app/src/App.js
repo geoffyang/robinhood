@@ -58,7 +58,7 @@ function App() {
         {user ? (
           <ProtectedRoute path="/" exact={true}>
             <NavBar />
-            <Stock ticker={"EBAY"} />
+            <Stock ticker={"SPY"} />
             <Portfolio />
             <Watchlist />
           </ProtectedRoute>
