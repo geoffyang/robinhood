@@ -14,15 +14,15 @@ function Portfolio() {
   }, [dispatch])
 
   useEffect(() => {
-    for(const stock in portfolio){
+    for (const stock in portfolio) {
       dispatch(getSingleStock(stock))
     }
-  },[portfolio])
+  }, [portfolio])
 
   return (
     <>
-      <div>
-        <div>
+      <div className="ticker-container-outer">
+        <div className="ticker-container-inner">
           <table><tbody>
             <tr>
               <td>TICKER</td>

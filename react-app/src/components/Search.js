@@ -52,17 +52,17 @@ function Search() {
             type="search"
             id="search-form"
             class="search-bar-input"
-            placeholder="Search Tickers"
+            placeholder="Search..."
             autoComplete="off"
           />
         </div>
-        <button
+        {/* <button
           type="button"
-          class="search-button"
+          className="search-button"
           onClick={handleClick}
         >
           <i class="search-icon">search</i>
-        </button>
+        </button> */}
       </div>
       <div className="suggested-search-box">
         {/* {tickersShown} */}

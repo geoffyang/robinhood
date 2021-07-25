@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleStock } from '../store/stocksStore';
 import { Line } from 'react-chartjs-2';
+import { updateStock } from '../store/portfolioStore';
 import WatchlistAddButton from './WatchlistAddButton'
+import { updateBalance } from '../store/userStore';
+import './Stock.css'
+
 function Stock({ ticker }) {
   const [timePeriod, setTimePeriod] = useState('dailyPrices')
   const [data, setData] = useState({})
@@ -53,35 +57,64 @@ function Stock({ ticker }) {
   }, [timePeriod, stocks])
 
   return (
+    <div className="fix_attempt">
+      <div className="graphContainer">
+        <h1 id="stock_name">{stocks[ticker]?.shortName}</h1>
 
-
-
-    <div className='graphContainer'>
-      <h1>{stocks[ticker]?.shortName}</h1>
-      <div className='graphButtons'>
-        <button onClick={() => {
-          setTimePeriod('dailyPrices');
-        }}>Today</button>
-        <button onClick={() => {
-          setTimePeriod('weeklyPrices');
-        }}>Weekly</button>
-        <button onClick={() => {
-          setTimePeriod('oneMonthPrices');
-        }}>Monthly</button>
-        <button onClick={() => {
-          setTimePeriod('yearlyPrices');
-        }}>Yearly</button>
-        <button onClick={() => {
-          setTimePeriod('allTimePrices');
-        }}>All Time</button>
-      </div>
-      <div className='graph'>
-        {
-          (stocks[ticker]) ?
-          <Line data={data} options={options} />
-          :
-          <h3>Loading...</h3>
-        }
+        <div className="graph">
+          {stocks[ticker] ? (
+            <Line data={data} options={options} />
+          ) : (
+            <h3>Loading...</h3>
+          )}
+        </div>
+        <div className="graphButtonContainer">
+          <div className="graphButtons">
+            <button
+              className="daily_prices graphButton button-selected"
+              onClick={() => {
+                setTimePeriod("dailyPrices");
+              }}
+            >
+              1D
+            </button>
+            <button
+              className="weekly_prices graphButton"
+              onClick={() => {
+                setTimePeriod("weeklyPrices");
+              }}
+            >
+              1W
+            </button>
+            <button
+              className="one_month_prices graphButton"
+              onClick={() => {
+                setTimePeriod("oneMonthPrices");
+              }}
+            >
+              1M
+            </button>
+            <button
+              className="yearly_prices graphButton"
+              onClick={() => {
+                setTimePeriod("yearlyPrices");
+              }}
+            >
+              1Y
+            </button>
+            <button
+              className="all_time_prices graphButton"
+              onClick={() => {
+                setTimePeriod("allTimePrices");
+              }}
+            >
+              All
+            </button>
+          </div>
+        </div>
+        <div>
+         
+        </div>
       </div>
       <WatchlistAddButton ticker={ticker} />
     </div>

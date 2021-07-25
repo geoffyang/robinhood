@@ -2,6 +2,7 @@ const LOAD_PORTFOLIO = "portfolio/LOAD_PORTFOLIO";
 const BUY_STOCK = "portfolio/BUY_STOCK"
 
 
+
 const loadPortfolio = portfolio => ({
     type: LOAD_PORTFOLIO,
     portfolio,
@@ -20,8 +21,20 @@ export const getPortfolio = () => async dispatch => {
     }
 }
 
-export const buyStock = ticker => async dispatch => {
-    const response = await fetch(`/api/portfolio-stocks/${ticker}`)
+export const updateStock = (ticker, operator) => async dispatch => {
+    let response
+    if(operator === 'add'){
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${operator}`, {
+            method: 'POST',
+            // data: JSON.stringify(add),
+        })
+    }
+    else{
+        response = await fetch(`/api/portfolio-stocks/${ticker}/${operator}`, {
+            method: 'POST',
+            // data: JSON.stringify(add),
+        })
+    }
     if (response.ok) {
         const purchasedStock = await response.json()
         dispatch(addStock(purchasedStock))

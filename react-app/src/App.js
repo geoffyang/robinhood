@@ -14,6 +14,7 @@ import Portfolio from './components/Portfolio';
 import Splash from './components/Splash/Splash'
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
+import Asset from './components/Asset'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,33 +35,42 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/login' exact={true}>
+        <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
+        <ProtectedRoute path="/users" exact={true}>
           <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path='/search-results/:searchedTicker' >
+
+        <ProtectedRoute path="/asset/:ticker">
+          <NavBar />
+          <Asset />
+        </ProtectedRoute>
+
+        <ProtectedRoute path="/search-results/:searchedTicker">
           <NavBar />
           <SearchResults />
           <Watchlist />
         </ProtectedRoute>
-        {(user) ?
-          <ProtectedRoute path='/' exact={true} >
+
+
+        {user ? (
+          <ProtectedRoute path="/" exact={true}>
             <NavBar />
-            <h1>My Home Page</h1>
-            <Stock ticker={'EBAY'} />
+            <Stock ticker={"SPY"} />
             <Portfolio />
             <Watchlist />
           </ProtectedRoute>
-        :
-          <Route exact path='/'>
+        ) : (
+          <Route exact path="/">
             <Splash />
           </Route>
-        }
+        )}
+
+        
       </Switch>
     </BrowserRouter>
   );

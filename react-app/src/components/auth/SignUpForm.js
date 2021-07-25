@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, Redirect } from 'react-router-dom';
@@ -7,11 +8,11 @@ import './SignUpForm.css';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
-  const user = useSelector(state => state.session.user);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
@@ -19,7 +20,7 @@ const SignUpForm = () => {
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
-        setErrors(data)
+        setErrors(data);
       }
     }
   };
@@ -41,10 +42,11 @@ const SignUpForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (
+
     <div>
       <div>
         <div>
@@ -142,7 +144,7 @@ const SignUpForm = () => {
           </div>
         </div>
       </div>
-      <div >
+      <div>
         <SignUpFormContentBlock
           title={'Commission-free trading'}
           content={'Break free from commission-fees and make unlimited commission-free trades in stocks, funds, and options with Robinhood Financial. Other fees may apply. View our fee schedule to learn more.'}
