@@ -5,6 +5,10 @@
   padding: 0px;
   font-size: 18px;
 }
+Link {
+  text-decoration: none;
+  font-size:inherit;
+}
 
 .add-to-watchlist-container {
   box-sizing: border-box;
@@ -35,6 +39,12 @@
 
 .watchlist-components:hover {
   box-shadow: 24px grey;
+}
+
+.link-look{
+  font-size: inherit;
+  text-decoration: none;
+  color:black;
 }
 
 .current-price {

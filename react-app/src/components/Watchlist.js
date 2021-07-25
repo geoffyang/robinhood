@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { getAllInWatchList, deleteTickerThunk } from "../store/watchlistStore";
 import { getSingleStock, getMultipleStocks } from "../store/stocksStore";
 import "./Watchlist.css";
@@ -23,20 +25,21 @@ function Watchlist() {
     }
   }, [watchlist]);
 
-  
+
   return (
     <div className="add-to-watchlist-container">
       {watchlist ? (
         Object.values(watchlist).map((watchedStock) => {
           return (
             <div className="watchlist-components">
-              <div className="ticker-name">{watchedStock.ticker}</div>
+              <Link to={`/asset/${watchedStock.ticker}`} className={"link-look"}>
+                <div className="ticker-name">{watchedStock.ticker}</div>
+              </Link>
               <div
                 className="stock-logo"
                 style={{
-                  backgroundImage: `url('${
-                    stocks[watchedStock.ticker]?.logoURL
-                  }')`,
+                  backgroundImage: `url('${stocks[watchedStock.ticker]?.logoURL
+                    }')`,
                 }}
               ></div>
 
@@ -52,13 +55,13 @@ function Watchlist() {
               >
                 -
               </button>
-            </div>
+            </div >
           );
         })
       ) : (
         <div>Loading...</div>
       )}
-    </div>
+    </div >
   );
 }
 export default Watchlist;
