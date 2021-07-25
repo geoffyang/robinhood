@@ -12,7 +12,7 @@ svg {
 
 #navbar-container {
   box-sizing: border-box;
-  max-height: 64px;
+  height: 64px;
   /* position: fixed; */
   /* position:absolute; */
   width: 100%;
@@ -33,6 +33,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 30%;
 }
 
 #search-container:focus-within {
@@ -43,23 +44,33 @@ svg {
   width: 90%;
 }
 
-.fake_links_container {
-  /* display:flex;
-  flex-direction: row;
-  font-weight: bold;
-  float: right;
-  width: 15%;
-  margin: 3px;
-  padding: 6px; */
-  float: right;
+.links_container {
+  width: 70%;
   list-style-type: none;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: inherit;
 }
 
-.nav-link {
-  display: inline;
-  margin-right: 30px;
-  margin-left: 0;
+.nav-link, .nav-link-div {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.nav-link-div {
+  border-bottom: 2px transparent black;
+}
+
+.nav-link-div:hover {
+  border-bottom: 2px solid rgb(0, 200, 5);
 }
 
 .navbar_contianer::after {
@@ -75,9 +86,7 @@ svg {
   justify-content: space-around;
 }
 
-
-#logo-container svg{
-
+#logo-container svg {
   width: 75px;
 }
 
@@ -90,6 +99,7 @@ svg {
 .search_bar input {
   width: 750px;
 }
+
 /*
 .root_page:hover {
   display: flex;
@@ -148,6 +158,6 @@ svg {
   padding: 4px;
 } */
 
-/* div{
-  border: 1px solid lightgreen;
+/* div {
+  border: 1px solid red;
 } */

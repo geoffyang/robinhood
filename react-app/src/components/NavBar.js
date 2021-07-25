@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-// import LogoutButton from "./auth/LogoutButton";
+import LogoutButton from "./auth/LogoutButton";
 import Search from "./Search";
 import "./NavBar.css";
 const NavBar = () => {
@@ -29,32 +29,37 @@ const NavBar = () => {
             <Search />
           </div>
         </div>
-        <li className="fake_links_container">
-          <NavLink to="/" className="nav-link">Rewards</NavLink>
-          <NavLink to="/" className="nav-link">Portfolio</NavLink>
-          <NavLink to="/asset/AAPL" className="nav-link">AAPL</NavLink>
-          <NavLink to="/" className="nav-link">Messages</NavLink>
-          <NavLink to="/" className="nav-link">Account</NavLink>
-        </li>
-        {!user ? (
-          <>
-            <li>
-              <NavLink to="/login" exact={true} activeClassName="active">
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/sign-up" exact={true} activeClassName="active">
-                Sign Up
-              </NavLink>
-            </li>
-          </>
-        ) : null}
-        {user ? <li className="account_button">Account</li> : null}
+        <div className="links_container">
+          <Link to="/" className="nav-link"><div className={"nav-link-div"}> Rewards</div></Link>
+          <Link to="/" className="nav-link"><div className={"nav-link-div"}> Portfolio</div></Link>
+          {/* <Link to="/asset/AAPL" className="nav-link"><div className={"nav-link-div"}> AAPL</div></Link> */}
+          <Link to="/" className="nav-link"><div className={"nav-link-div"}> Messages</div></Link>
+          <Link to="/" className="nav-link"><div className={"nav-link-div"}> Account</div></Link>
+          <LogoutButton />
+        </div>
 
       </div>
-    </nav>
+    </nav >
   );
 };
 
 export default NavBar;
+
+
+
+// {
+// user ?
+// <>
+//   <li>
+//     <Link to="/login" exact={true} activeClassName="active">
+//       Login
+//     </Link>
+//   </li>
+//   <li>
+//     <Link to="/sign-up" exact={true} activeClassName="active">
+//       Sign Up
+//     </Link>
+//   </li>
+// </>
+// }
+{/* {user ? <li className="account_button">Account</li> : null} */ }
