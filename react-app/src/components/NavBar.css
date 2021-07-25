@@ -75,11 +75,9 @@ svg {
   justify-content: space-around;
 }
 
-#logo-container:hover {
-  color: green;
-}
 
-#logo-container svg {
+#logo-container svg{
+
   width: 75px;
 }
 
@@ -92,7 +90,7 @@ svg {
 .search_bar input {
   width: 750px;
 }
-
+/*
 .root_page:hover {
   display: flex;
   flex-direction: row;
@@ -141,7 +139,7 @@ svg {
   font-size: 18px;
   font-weight: bold;
   color: black;
-}
+} */
 
 /* .home_button {
   display: flex;
