@@ -33,7 +33,7 @@ export default function Asset() {
                 </div>
                 <div className="titles">About</div >
                 <div id="company-description">
-                    {stock?.companyDescription.slice(0, 500)} <span style={{ "color": "rgb(0,200,5)", "font-weight": "700" }}>Read More</span>
+                    {stock?.companyDescription.slice(0, 500)}... <span style={{ "color": "rgb(0,200,5)", "font-weight": "700" }}>Read More</span>
                     <br></br>
                     <br></br>
 
@@ -71,22 +71,31 @@ export default function Asset() {
 
 
             </div>
-            <div id="buy-panel">
-                <div id="buy-1">Buy {ticker}
+            <div id="right-panel">
+                <div id="buy-panel">
+                    <div id="buy-1">Buy {ticker}
+                    </div>
+
+                    <div id="buy-2">
+                        <span>Cur. Quantity</span>
+                        <span>{ }</span>
+                    </div>
+
+                    <div id="buy-3">
+                        <button id='buy'>Buy 1</button>
+                        <br></br>
+                        <button style={{ "background-color": "salmon" }} id='sell'>Sell 1</button>
+                    </div>
+
+                    <div id="buy-4">
+                        ${user.cash_balance} buying power available
+                    </div>
+
                 </div>
-
-                <div id="buy-2"></div>
-
-                <div id="buy-3">
-                    <button id='buy'>Buy 1</button>
-                    <br></br>
-                    <button id='sell'>Sell 1</button>
+                <br></br>
+                <div id="watchlist-wrapper">
+                    <button id='watchlist'>✔︎ Add {ticker} to Watchlist</button>
                 </div>
-
-                <div id="buy-4">
-                    ${user.cash_balance} buying power available
-                </div>
-
             </div>
         </div>
     )
