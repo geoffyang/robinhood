@@ -12,6 +12,7 @@ export default function Asset() {
 
     const dispatch = useDispatch();
     const stock = useSelector(state => state.stocks[ticker])
+    const user = useSelector(state => state.session.user)
 
     useEffect(() => {
         (async () => {
@@ -22,7 +23,7 @@ export default function Asset() {
     const newsArray = [1, 2, 3]
 
     return (
-        <>
+        <div id="mega-container">
             <div id="asset-container" >
                 <div id="chart" ><h1>CHART PLACEHOLDER</h1>
                     <div>{stock?.ticker}</div>
@@ -56,13 +57,13 @@ export default function Asset() {
                     {newsArray.map(id => {
                         return (
                             <div className={"news-div"} key={`news${id}`}>
-                                <span style={{"font-size":"13", "font-weight":"500"}}>{stock?.[`newsSource${id}`]} </span>
+                                <span style={{ "font-size": "13", "font-weight": "500" }}>{stock?.[`newsSource${id}`]} </span>
 
-                                <span style={{"font-size":"13", "font-weight":"400", "color":"rgb(111,120,126)"}}>{stock?.[`newsDate${id}`].slice(0,7)}</span>
+                                <span style={{ "font-size": "13", "font-weight": "400", "color": "rgb(111,120,126)" }}>{stock?.[`newsDate${id}`].slice(0, 7)}</span>
 
                                 <div className={"news-headline"}>{stock?.[`newsArticle${id}`].slice(0, 50)}...</div>
 
-                                <div className={"news-link"}>{stock?.[`newsLink${id}`].slice(0,66)} ...</div>
+                                <div className={"news-link"}>{stock?.[`newsLink${id}`].slice(0, 66)} ...</div>
                             </div>
                         )
                     })}
@@ -70,10 +71,24 @@ export default function Asset() {
 
 
             </div>
-            <div>
-                <h1>BUY PANEL</h1>
+            <div id="buy-panel">
+                <div id="buy-1">Buy {ticker}
+                </div>
+
+                <div id="buy-2"></div>
+
+                <div id="buy-3">
+                    <button id='buy'>Buy 1</button>
+                    <br></br>
+                    <button id='sell'>Sell 1</button>
+                </div>
+
+                <div id="buy-4">
+                    ${user.cash_balance} buying power available
+                </div>
+
             </div>
-        </>
+        </div>
     )
 }
 
