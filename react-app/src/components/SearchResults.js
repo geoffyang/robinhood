@@ -5,6 +5,7 @@ import Stock from './Stock';
 import { Line } from 'react-chartjs-2';
 import { NavLink, useParams } from 'react-router-dom';
 import { tickerList } from './assets';
+import WatchlistAddButton from './WatchlistAddButton';
 
 function SearchResults() {
   const { searchedTicker } = useParams();
@@ -32,10 +33,14 @@ function SearchResults() {
       <h1>Search Results:</h1>
       {(tickersShown) ?
         tickersShown.map(ticker => {
-          return (<Stock ticker={ticker}/>)
+          return (
+            <><Stock ticker={ticker} />
+              <WatchlistAddButton ticker={ticker} />
+              </>)
         })
         :
         <h1>No Results Found</h1>}
+
     </div>
   );
 }
