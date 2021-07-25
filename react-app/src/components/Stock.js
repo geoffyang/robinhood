@@ -113,33 +113,7 @@ function Stock({ ticker }) {
           </div>
         </div>
         <div>
-          {/* <button
-          onClick={async () => {
-            await dispatch(updateStock(ticker, "add"));
-            await dispatch(
-              updateBalance(stocks[ticker].currentPrice.slice(1), "subtract")
-            );
-          }}
-        >
-          Purchase
-        </button>
-        <button
-          onClick={async () => {
-            await dispatch(updateStock(ticker, "subtract"));
-            await dispatch(
-              updateBalance(stocks[ticker].currentPrice.slice(1), "add")
-            );
-          }}
-        >
-          Sell
-        </button>
-        <button
-          onClick={async () => {
-            await dispatch(updateBalance(100, "add"));
-          }}
-        >
-          Add $100
-        </button> */}
+         
         </div>
       </div>
       <WatchlistAddButton ticker={ticker} />

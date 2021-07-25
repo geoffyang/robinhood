@@ -3,7 +3,7 @@
     font-family: "Capsule Sans Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     margin: 0px;
     padding: 0px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 h1 {
@@ -41,32 +41,96 @@ img {
     align-items: flex-end;
     padding-bottom: 15px;
     margin-bottom: 24px;
+    padding-top: 90px;
+}
+
+#mega-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 40px;
+    max-width: 1075px;
 }
 
 #asset-container {
     box-sizing: border-box;
     width: 70%;
     padding-left: 1rem;
+    padding-right: 2rem;
 }
 
 #chart {
     box-sizing: border-box;
-    min-height: 400px;
+    min-height: 350px;
+    background-color: lightgreen;
 }
 
-.company-description {
+#company-description {
     font-size: 15px;
     font-weight: 400;
-    letter-spacing:-0.1px;
-    font-family: "Capsule Sans Text";
+    letter-spacing: -0.1px;
+    line-height: 25px;
+    width: 90%;
 }
+
 .about, .key-statistics {
     display: flex;
-    flex-wrap: nowrap;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.key-statistics div, .about div {
     width: 25%;
 }
 
+.key-statistics p, .about p {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+}
 
-/* div{
+.key-statistics span, .about span {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-right: 1.5rem;
+}
+
+#news-container {
+    display: flex;
+    flex-flow: column;
+}
+
+.news-div {
+    height: 134px;
+}
+
+#news-container span {
+    letter-spacing: -0.1px;
+    line-height: 20px;
+}
+
+.news-headline {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 4px 0
+}
+
+.news-link {
+    color: rgb(106, 114, 120);
+    font-size: 13px;
+}
+
+#right-panel {
+    min-width: 200px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* div {
     border: 1px solid lightgray;
 } */

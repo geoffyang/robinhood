@@ -55,10 +55,12 @@ function App() {
           <SearchResults />
           <Watchlist />
         </ProtectedRoute>
+
+
         {user ? (
           <ProtectedRoute path="/" exact={true}>
             <NavBar />
-            <Stock ticker={"EBAY"} />
+            <Stock ticker={"SPY"} />
             <Portfolio />
             <Watchlist />
           </ProtectedRoute>
@@ -67,6 +69,8 @@ function App() {
             <Splash />
           </Route>
         )}
+
+        
       </Switch>
     </BrowserRouter>
   );

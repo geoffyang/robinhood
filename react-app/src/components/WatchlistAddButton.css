@@ -1,28 +1,17 @@
 
 
-.add-ticker-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    position: absolute;
-    right: 80px;
-    top: 240px;
+.add-button {
+  background-color: white;
+  color: rgb(0, 200, 5);
+  border: 1px solid rgb(0, 200, 5);
+  outline: 0;
+  font-size: 13px;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 4px;
+  width: 100%
 }
 
-.add-button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  text-align: center;
-  top: 49px;
-  right: 60px;
-  padding: 4px;
-  border: 1px solid #b4bdc2;
-  color: black;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 8px 6px -6px #b4bdc2;
-	   -moz-box-shadow: 0 8px 6px -6px #b4bdc2;
-	        box-shadow: 0 8px 6px -6px #b4bdc2;
-}
 .add-button:hover {
-  background: #ffff;
+  background: black;
 }
