@@ -36,10 +36,10 @@ def add_ticker_to_portfolio(ticker, operator):
 
     if stock_already_in_portfolio:
         if operator == 'add':
-            expanded_basis = stock_already_in_portfolio.share_count * stock_already_in_portfolio.basis
+            expanded_basis = round(stock_already_in_portfolio.share_count * stock_already_in_portfolio.basis, 2)
             stock_already_in_portfolio.share_count += 1
-            new_basis = (expanded_basis+current_price) / \
-                stock_already_in_portfolio.share_count
+            new_basis = round((expanded_basis+current_price) / \
+                stock_already_in_portfolio.share_count ,2)
             stock_already_in_portfolio.basis = new_basis
         else:
             if stock_already_in_portfolio.share_count > 0:

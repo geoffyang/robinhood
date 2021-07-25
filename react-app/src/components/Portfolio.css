@@ -1,0 +1,14 @@
+.ticker-container-inner{
+    display:flex;
+    flex-direction: flex-start;
+    width:100%;
+}
+
+.ticker-container-inner table{
+    width:100%;
+    font-size: 14px;
+}
+
+td{
+    font-size:15px;
+}

@@ -46,9 +46,9 @@ function Stock({ ticker }) {
             scales: {
               xAxes: [{
                 display: false,
-                gridLines:{color:"#000000"}
+                gridLines: { color: "#000000" }
               }],
-              yAxes:[{ display:false, gridLines:{color:"#000000"}}]
+              yAxes: [{ display: false, gridLines: { color: "#000000" } }]
             }
           },
         ],
@@ -57,67 +57,67 @@ function Stock({ ticker }) {
   }, [timePeriod, stocks])
 
   return (
-    <div className="fix_attempt">
-      <div className="graphContainer">
-        <h1 id="stock_name">{stocks[ticker]?.shortName}</h1>
 
-        <div className="graph">
-          {stocks[ticker] ? (
-            <Line data={data} options={options} />
-          ) : (
-            <h3>Loading...</h3>
-          )}
-        </div>
-        <div className="graphButtonContainer">
-          <div className="graphButtons">
-            <button
-              className="daily_prices graphButton button-selected"
-              onClick={() => {
-                setTimePeriod("dailyPrices");
-              }}
-            >
-              1D
-            </button>
-            <button
-              className="weekly_prices graphButton"
-              onClick={() => {
-                setTimePeriod("weeklyPrices");
-              }}
-            >
-              1W
-            </button>
-            <button
-              className="one_month_prices graphButton"
-              onClick={() => {
-                setTimePeriod("oneMonthPrices");
-              }}
-            >
-              1M
-            </button>
-            <button
-              className="yearly_prices graphButton"
-              onClick={() => {
-                setTimePeriod("yearlyPrices");
-              }}
-            >
-              1Y
-            </button>
-            <button
-              className="all_time_prices graphButton"
-              onClick={() => {
-                setTimePeriod("allTimePrices");
-              }}
-            >
-              All
-            </button>
-          </div>
-        </div>
-        <div>
+    <div className="graphContainer">
+      <h1 id="stock_name">{stocks[ticker]?.shortName}</h1>
 
+      <div className="graph">
+        {stocks[ticker] ? (
+          <Line data={data} options={options} />
+        ) : (
+          <h3>Loading...</h3>
+        )}
+      </div>
+      <div className="graphButtonContainer">
+        <div className="graphButtons">
+          <button
+            className="daily_prices graphButton button-selected"
+            onClick={() => {
+              setTimePeriod("dailyPrices");
+            }}
+          >
+            1D
+          </button>
+          <button
+            className="weekly_prices graphButton"
+            onClick={() => {
+              setTimePeriod("weeklyPrices");
+            }}
+          >
+            1W
+          </button>
+          <button
+            className="one_month_prices graphButton"
+            onClick={() => {
+              setTimePeriod("oneMonthPrices");
+            }}
+          >
+            1M
+          </button>
+          <button
+            className="yearly_prices graphButton"
+            onClick={() => {
+              setTimePeriod("yearlyPrices");
+            }}
+          >
+            1Y
+          </button>
+          <button
+            className="all_time_prices graphButton"
+            onClick={() => {
+              setTimePeriod("allTimePrices");
+            }}
+          >
+            All
+          </button>
         </div>
       </div>
+      <div>
 
+      </div>
     </div>
+
+
   );
 }
 export default Stock;
