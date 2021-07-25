@@ -57,69 +57,63 @@ function Stock({ ticker }) {
   }, [timePeriod, stocks])
 
   return (
-    <div className="graphContainer">
-      <h1 id='stock_name'>{stocks[ticker]?.shortName}</h1>
-      <div className="graphButtons">
-        <div className="graphButton1">
-          <button
-            className="daily_prices"
-            onClick={() => {
-              setTimePeriod("dailyPrices");
-            }}
-          >
-            1D
-          </button>
+    <div className="fix_attempt">
+      <div className="graphContainer">
+        <h1 id="stock_name">{stocks[ticker]?.shortName}</h1>
+
+        <div className="graph">
+          {stocks[ticker] ? (
+            <Line data={data} options={options} />
+          ) : (
+            <h3>Loading...</h3>
+          )}
         </div>
-        <div className="graphButton2">
-          <button
-            className="weekly_prices"
-            onClick={() => {
-              setTimePeriod("weeklyPrices");
-            }}
-          >
-            1W
-          </button>
+        <div className="graphButtonContainer">
+          <div className="graphButtons">
+            <button
+              className="daily_prices graphButton button-selected"
+              onClick={() => {
+                setTimePeriod("dailyPrices");
+              }}
+            >
+              1D
+            </button>
+            <button
+              className="weekly_prices graphButton"
+              onClick={() => {
+                setTimePeriod("weeklyPrices");
+              }}
+            >
+              1W
+            </button>
+            <button
+              className="one_month_prices graphButton"
+              onClick={() => {
+                setTimePeriod("oneMonthPrices");
+              }}
+            >
+              1M
+            </button>
+            <button
+              className="yearly_prices graphButton"
+              onClick={() => {
+                setTimePeriod("yearlyPrices");
+              }}
+            >
+              1Y
+            </button>
+            <button
+              className="all_time_prices graphButton"
+              onClick={() => {
+                setTimePeriod("allTimePrices");
+              }}
+            >
+              All
+            </button>
+          </div>
         </div>
-        <div className="graphButton3">
-          <button
-            className="one_month_prices"
-            onClick={() => {
-              setTimePeriod("oneMonthPrices");
-            }}
-          >
-            1M
-          </button>
-        </div>
-        <div className="graphButton3">
-          <button
-            className="yearly_prices"
-            onClick={() => {
-              setTimePeriod("yearlyPrices");
-            }}
-          >
-            1Y
-          </button>
-        </div>
-        <div className="graphButton4">
-          <button
-            className="all_time_prices"
-            onClick={() => {
-              setTimePeriod("allTimePrices");
-            }}
-          >
-            All
-          </button>
-        </div>
-      </div>
-      <div className="graph">
-        {stocks[ticker] ? (
-          <Line data={data} options={options} />
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </div>
-      <div>
-        {/* <button
+        <div>
+          {/* <button
           onClick={async () => {
             await dispatch(updateStock(ticker, "add"));
             await dispatch(
@@ -146,6 +140,7 @@ function Stock({ ticker }) {
         >
           Add $100
         </button> */}
+        </div>
       </div>
       <WatchlistAddButton ticker={ticker} />
     </div>

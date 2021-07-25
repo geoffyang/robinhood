@@ -13,36 +13,73 @@ canvas {
   justify-content: center;
 } */
 
+/* canvas {
+  height: 100%;
+  width: 100%;
+} */
+
 #stock_name {
   display: flex;
-  flex-direction: row;
-  margin: 25px;
-  padding: 25px;
+  flex-direction: column;
+  /* margin: 40px; */
+  padding: 35px;
+  max-width: 500px;
 }
 
 .graphContainer {
+  position: relative;
   padding: 50px;
-  margin: 100px 100px;
+  padding-right: 250px;
+  /* margin: 100px; */
+  max-width: 60%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-.graph {
+/* .graph {
   display: flex;
   flex-direction: center;
   max-width: 40%;
-}
+  height: 40%;
+} */
 
-.graphButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  float: left;
-  width: 20%;
-  padding: 4px;
-  border: 1px solid #b4bdc2;
-  border-radius: 4px;
-}
 
-.graphButton1 {
+.graphButtons{
+  width: 25%;
+  margin-top:15px;
+  padding-left: 35px;
+}
+.graphButton{
+  width:18%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin: 0 1%;
+  cursor: pointer;
+}
+.graphButton:hover{
+  background-color: black;
+  color: white;
+}
+.ticker-container-outer{
+  max-width: 60%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-right: 300px;
+}
+.ticker-container-inner{
+  width: 250px;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+/* .button-selected{
+  background-color: black;
+  color: white;
+} */
+/* .graphButton1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -52,8 +89,8 @@ canvas {
   padding: 4px;
   border: 1px solid #b4bdc2;
   border-radius: 4px;
-}
-.graphButton2 {
+} */
+/* .graphButton2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -85,8 +122,8 @@ canvas {
   padding: 4px;
   border: 1px solid #b4bdc2;
   border-radius: 4px;
-}
-
+} */
+/*
 .daily_prices {
   background: #ffff;
   border-radius: 3px;
@@ -108,4 +145,4 @@ canvas {
   flex-direction: row;
   background: #ffff;
   border-radius: 3px;
-}
+} */
