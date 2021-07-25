@@ -15,7 +15,7 @@ import Splash from './components/Splash/Splash'
 import Search from './components/Search';
 import SearchResults from './components/SearchResults';
 import Asset from './components/Asset'
-import Homepage from './components/Homepage';
+import HomePage from './components/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -61,7 +61,7 @@ function App() {
 
           <ProtectedRoute path="/" exact={true}>
             <NavBar />
-            <Homepage />
+            <HomePage />
           </ProtectedRoute>
 
         ) : (

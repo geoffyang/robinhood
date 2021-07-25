@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Stock from './Stock';
 import Portfolio from './Portfolio.js';
 import Watchlist from './Watchlist.js'
-import "./Homepage.css"
+import "./HomePage.css"
 
 
-export default function Homepage() {
+export default function HomePage() {
 
     return (
         <div id="home-container">
