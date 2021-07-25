@@ -12,6 +12,7 @@ export default function Asset() {
 
     const dispatch = useDispatch();
     const stock = useSelector(state => state.stocks[ticker])
+    const user = useSelector(state => state.session.user)
 
     useEffect(() => {
         (async () => {
@@ -22,7 +23,7 @@ export default function Asset() {
     const newsArray = [1, 2, 3]
 
     return (
-        <>
+        <div id="mega-container">
             <div id="asset-container" >
                 <div id="chart" ><h1>CHART PLACEHOLDER</h1>
                     <div>{stock?.ticker}</div>
@@ -32,11 +33,14 @@ export default function Asset() {
                 </div>
                 <div className="titles">About</div >
                 <div id="company-description">
-                    {stock?.companyDescription.slice(0, 500)} Read More
+                    {stock?.companyDescription.slice(0, 500)}... <span style={{ "color": "rgb(0,200,5)", "font-weight": "700" }}>Read More</span>
+                    <br></br>
+                    <br></br>
+
                 </div>
                 <div className={"about"}>
                     <div><p>Top Holder</p><span>{stock?.holder0}</span></div>
-                    <div><p>Headquarters</p><span>{stock?.companyAdress}</span></div>
+                    <div><p>Headquarters</p><span>{stock?.companyAdress.slice(0, 11)}</span></div>
                     <div><p>YTD Price</p><span>{stock?.percentTextYear}</span></div>
                     <div><p>Analyst Score</p><span>{stock?.tradeWords}</span></div>
                 </div>
@@ -49,24 +53,51 @@ export default function Asset() {
                 </div >
 
                 <div className="titles">News</div >
-                {
-                    newsArray.map(id => {
+                <div id="news-container">
+                    {newsArray.map(id => {
                         return (
-                            <div key={`news${id}`}>
-                                <span>{stock?.[`newsSource${id}`]} 5h</span>
-                                <p>{stock?.[`newsArticle${id}`].slice(0, 50)}...</p>
-                                <p>{stock?.[`newsLink${id}`]}</p>
+                            <div className={"news-div"} key={`news${id}`}>
+                                <span style={{ "font-size": "13", "font-weight": "500" }}>{stock?.[`newsSource${id}`]} </span>
+
+                                <span style={{ "font-size": "13", "font-weight": "400", "color": "rgb(111,120,126)" }}>{stock?.[`newsDate${id}`].slice(0, 7)}</span>
+
+                                <div className={"news-headline"}>{stock?.[`newsArticle${id}`].slice(0, 50)}...</div>
+
+                                <div className={"news-link"}>{stock?.[`newsLink${id}`].slice(0, 66)} ...</div>
                             </div>
                         )
-                    })
-                }
+                    })}
+                </div>
 
 
             </div>
-            <div>
-                <h1>BUY PANEL</h1>
+            <div id="right-panel">
+                <div id="buy-panel">
+                    <div id="buy-1">Buy {ticker}
+                    </div>
+
+                    <div id="buy-2">
+                        <span>Cur. Quantity</span>
+                        <span>{ }</span>
+                    </div>
+
+                    <div id="buy-3">
+                        <button id='buy'>Buy 1</button>
+                        <br></br>
+                        <button style={{ "background-color": "salmon" }} id='sell'>Sell 1</button>
+                    </div>
+
+                    <div id="buy-4">
+                        ${user.cash_balance} buying power available
+                    </div>
+
+                </div>
+                <br></br>
+                <div id="watchlist-wrapper">
+                    <button id='watchlist'>✔︎ Add {ticker} to Watchlist</button>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
