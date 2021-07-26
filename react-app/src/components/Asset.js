@@ -5,6 +5,7 @@ import { getSingleStock } from '../store/stocksStore';
 import { useParams } from "react-router-dom";
 import BuyPanel from "./BuyPanel"
 import "./Asset.css"
+import Stock from './Stock';
 
 export default function Asset() {
 
@@ -26,11 +27,14 @@ export default function Asset() {
     return (
         <div id="mega-container">
             <div id="asset-container" >
-                <div id="chart" ><h1>{ticker} CHART </h1>
-                    <div>{stock?.ticker}</div>
-                    <div>{stock?.shortName}</div>
-                    <div>{stock?.currentPrice}</div>
-                    <div>{stock?.percentText}</div>
+                <div id="chart" >
+                    <Stock ticker={ticker} />
+                    <div className='stockstuff'>
+                        {/* <div className='stockstuffcomp'>{stock?.ticker}</div>
+                        <div className='stockstuffcomp'>{stock?.shortName}</div> */}
+                        <div className='stockstuffcomp'>{stock?.currentPrice}</div>
+                        <div className='stockstuffcomp'>{stock?.percentText}</div>
+                    </div>
                 </div>
                 <div className="titles">About</div >
                 <div id="company-description">
@@ -80,4 +84,3 @@ export default function Asset() {
         </div>
     )
 }
-
