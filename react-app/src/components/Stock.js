@@ -60,8 +60,13 @@ function Stock({ ticker }) {
   return (
 
     <div className="graphContainer">
-      <span id="stock_name">{stocks[ticker]?.shortName}</span>
-
+      <div className={"stockstuff2"}>
+        <div id="stock_name">{stocks[ticker]?.shortName}</div>
+        <div id="stock-price-spacer">
+          <span id="stock_price">{stocks[ticker]?.currentPrice}</span>
+          <span id="stock_percent">{stocks[ticker]?.percentText}</span>
+        </div>
+      </div>
       <div className="graph">
         {stocks[ticker] ? (
           <Line data={data}
@@ -116,7 +121,7 @@ function Stock({ ticker }) {
               setTimePeriod("allTimePrices");
             }}
           >
-            All
+            ALL
           </button>
         </div>
       </div>

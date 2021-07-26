@@ -6,21 +6,40 @@
   font-size: 18px;
 }
 
-.graphContainer{
-  height:100%;
-  width:100%;
+.graphContainer {
+  height: 100%;
+  width: 100%;
 }
 
-#stock_name {
+.stockstuff2 {
   display: flex;
-  flex-direction: column;
-  /* margin: 40px; */
-  padding: 35px;
-  max-width: 500px;
+  /* background-color: red; */
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  /* font-size: 15px; */
 }
+#stock-price-spacer{
+/* background-color: purple; */
+display: flex;
+flex-direction: row nowrap;
+justify-content: flex-end;
+}
+
+#stock_price,
+#stock_percent{
+  padding-left:1rem;
+  font-size: 13px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+/* #stock_name{
+  background-color: blue;
+} */
 
 .graphContainer {
-  padding: 50px;
+  /* background-color: red; */
+  /* padding: 50px; */
   width: 100%;
 }
 
@@ -32,21 +51,30 @@
 } */
 
 .graphButtons {
-  width: 30%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
   margin-top: 15px;
-  padding-left: 35px;
-
+  border-bottom: 1px solid lightgray;
 }
 
-.graphButton{
+.graphButton {
   width: 30px;
-  border-radius: 5px;
-  margin: 0 1%;
+  height: 100%;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px transparent white;
+  background-color: white;
+  margin-right: 20px;
 }
 
-.graphButton:hover{
-  text-decoration: underline;
+.graphButton:hover {
+  border-bottom: 2px solid rgb(0, 200, 5);
 }
 
 .ticker-container-outer {

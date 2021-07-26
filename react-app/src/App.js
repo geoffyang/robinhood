@@ -54,7 +54,6 @@ function App() {
         <ProtectedRoute path="/search-results/:searchedTicker">
           <NavBar />
           <SearchResults />
-          <Watchlist />
         </ProtectedRoute>
 
         {user ? (

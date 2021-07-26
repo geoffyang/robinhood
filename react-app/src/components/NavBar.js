@@ -29,11 +29,11 @@ const NavBar = () => {
             <Search />
           </div>
         </div>
+        <div id='nav-spacer'></div>
         <div className="links_container">
-          <Link to="/" className={"nav-link"}><div className={"nav-link-div"}> Rewards</div></Link>
+          <Link to="/" className={"nav-link"}><div className={"nav-link-div"}> Home</div></Link>
           <Link to="/" className={"nav-link"}><div className={"nav-link-div"}> Portfolio</div></Link>
           {/* <Link to="/asset/AAPL" className={"nav-link"}><div className={"nav-link-div"}> AAPL</div></Link> */}
-          <Link to="/" className={"nav-link"}><div className={"nav-link-div"}> Messages</div></Link>
           <Link to="/" className={"nav-link"}><div className={"nav-link-div"}> Account</div></Link>
           <LogoutButton className={"nav-link"}/>
         </div>
