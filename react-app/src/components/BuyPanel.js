@@ -48,9 +48,7 @@ export default function BuyPanel({ ticker }) {
             </div>
 
             <div id="buy-4">
-                ${user.cash_balance} buying power available
-
-
+                ${user.cash_balance.toFixed(2)} buying power available
             </div>
         </div>
 

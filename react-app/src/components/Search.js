@@ -64,12 +64,14 @@ function Search() {
           <i class="search-icon">search</i>
         </button> */}
       </div>
-      <div className="suggested-search-box">
-        {/* {tickersShown} */}
-        {tickersShown.map(ticker => <span onClick={() => {
-          handleClickSuggestions(ticker);
-        }}>{ticker}</span>)}
-      </div>
+      {searchQuery && (
+        <div className="suggested-search-box">
+          {/* {tickersShown} */}
+          {tickersShown.map(ticker => <span onClick={() => {
+            handleClickSuggestions(ticker);
+          }}>{ticker}</span>)}
+        </div>
+      )}
     </div>
   );
 }
