@@ -21,10 +21,10 @@ p {
     line-height: 36px;
 }
 
-span {
+/* span {
     font-size: 1rem;
     line-height: 1.5rem;
-}
+} */
 
 img {
     width: 100%;
@@ -63,7 +63,7 @@ img {
 #chart {
     box-sizing: border-box;
     min-height: 350px;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
 }
 
 #company-description {
@@ -140,18 +140,7 @@ img {
     text-align: center;
 }
 
-.graphButton{
-    width: 30px;
-    border-radius: 5px;
-    margin: 0 1%;
-    cursor: pointer;
-    background-color: white;
-    border: none;
-}
 
-.graphButton:hover{
-    text-decoration: underline;
-}
 
 /* div {
     border: 1px solid lightgray;

@@ -6,6 +6,7 @@
     outline: 0;
     height: 100%;
     font-size: inherit;
+    font-weight: inherit;
 }
 
 .logout_button:hover {

@@ -19,8 +19,8 @@ svg {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  /* justify-content: space-between; */
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 #magnifier {
@@ -34,7 +34,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 30%;
+  min-width: 40%;
 }
 
 #search-container:focus-within {
@@ -45,16 +45,22 @@ svg {
   width: 90%;
 }
 
+#nav-spacer {
+  /* background-color: blue; */
+  min-width: 10%;
+}
+
 .links_container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-size: 13px;
-  width: 40%;
+  font-weight: 700;
+  min-width: 30%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: inherit;
-  justify-self:flex-end;
+  margin-right: 1rem;
 }
 
 .nav-link, .nav-link-div {
@@ -64,6 +70,7 @@ svg {
   text-decoration: none;
   color: black;
   font-size: inherit;
+  font-weight: 700;
 }
 
 .nav-link-div {

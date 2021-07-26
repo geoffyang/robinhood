@@ -185,6 +185,8 @@ function PhoneImage({ whichImage }) {
             text = "Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don’t have)."
     }
 
+    
+
     return (
         <div className="tabs-right">
             <div className="phone-screen">

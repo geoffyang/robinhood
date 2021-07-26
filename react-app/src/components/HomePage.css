@@ -12,6 +12,7 @@
 }
 
 #homepage-left {
+    /* background-color: purple; */
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -20,8 +21,8 @@
 }
 
 #homepage-chart {
-    border: 1px solid red;
-    height: 550px;
+    /* border: 1px solid red; */
+    height: 500px;
     position: relative;
     overflow: hidden;
 }
@@ -38,7 +39,7 @@
     align-items: flex-end;
     padding-bottom: 15px;
     margin-bottom: 24px;
-    padding-top: 90px;
+
 }
 
 #homepage-portfolio {

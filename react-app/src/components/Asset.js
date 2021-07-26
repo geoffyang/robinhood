@@ -29,12 +29,7 @@ export default function Asset() {
             <div id="asset-container" >
                 <div id="chart" >
                     <Stock ticker={ticker} />
-                    <div className='stockstuff'>
-                        {/* <div className='stockstuffcomp'>{stock?.ticker}</div>
-                        <div className='stockstuffcomp'>{stock?.shortName}</div> */}
-                        <div className='stockstuffcomp'>{stock?.currentPrice}</div>
-                        <div className='stockstuffcomp'>{stock?.percentText}</div>
-                    </div>
+                   
                 </div>
                 <div className="titles">About</div >
                 <div id="company-description">
