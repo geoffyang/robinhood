@@ -28,10 +28,13 @@ function Watchlist() {
 
   return (
     <div className="add-to-watchlist-container">
+      <div id='watchlist-title'>Watchlist</div>
       {watchlist ? (
         Object.values(watchlist).map((watchedStock) => {
           return (
             <div className="watchlist-components">
+
+
               <Link to={`/asset/${watchedStock.ticker}`} className={"link-look"}>
                 <div className="ticker-name">{watchedStock.ticker}</div>
               </Link>
@@ -40,24 +43,27 @@ function Watchlist() {
                 style={{
                   backgroundImage: `url('${stocks[watchedStock.ticker]?.logoURL
                     }')`,
-                }}
-              ></div>
+                }} >
+
+              </div>
 
               <div className="current-price">
                 {stocks[watchedStock.ticker]?.currentPrice}
               </div>
+
               <button
                 className="delete-button"
                 onClick={async () => {
                   await dispatch(deleteTickerThunk(watchedStock.ticker));
                   await dispatch(getAllInWatchList());
-                }}
-              >
+                }}>
                 -
               </button>
             </div >
           );
         })
+
+
       ) : (
         <div>Loading...</div>
       )}

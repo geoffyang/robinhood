@@ -16,6 +16,7 @@ export default function HomePage() {
                     <Stock ticker={"AMC"} />  </div>
                 <br></br>
                 <br></br>
+                <div id="homepage-portfolio-title">Your Portfolio</div>
                 <div id="homepage-portfolio"><Portfolio /></div>
             </div>
 

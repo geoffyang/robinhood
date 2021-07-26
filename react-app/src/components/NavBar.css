@@ -11,6 +11,7 @@ svg {
 }
 
 #navbar-container {
+  /* border: 1px solid red; */
   box-sizing: border-box;
   height: 64px;
   /* position: fixed; */
@@ -45,15 +46,15 @@ svg {
 }
 
 .links_container {
-  width: 70%;
-  list-style-type: none;
-  padding-left: 2rem;
-  padding-right: 1rem;
+  border: 1px solid red;
+  font-size: 13px;
+  width: 40%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   height: inherit;
+  justify-self:flex-end;
 }
 
 .nav-link, .nav-link-div {
@@ -62,7 +63,7 @@ svg {
   align-items: center;
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: inherit;
 }
 
 .nav-link-div {

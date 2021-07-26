@@ -24,8 +24,7 @@ export default function BuyPanel({ ticker }) {
 
 
         <div id="buy-panel">
-            <div id="buy-1">Buy {ticker}
-            </div>
+            <div id="buy-1">Buy {ticker} </div>
 
             <div id="buy-2">
                 <span>Cur. Quantity</span>

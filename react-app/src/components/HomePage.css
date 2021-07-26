@@ -16,22 +16,37 @@
     flex-direction: column;
     width: 70%;
     padding-right: 50px;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 #homepage-chart {
     border: 1px solid red;
-    height:400px;
-    display:flex;
+    height: 400px;
+    display: flex;
     align-content: center;
 }
 
+#homepage-portfolio-title {
+    /* border: 1px solid red; */
+    font-size: 24px;
+    letter-spacing: -0.33px;
+    line-height: 32px;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    margin-bottom: 24px;
+    padding-top: 90px;
+}
+
 #homepage-portfolio {
+    /* border: 1px solid blue; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border-top: 1px solid lightgray;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
 }
 
 #homepage-right {
