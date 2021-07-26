@@ -59,7 +59,7 @@ const LoginForm = () => {
               />
             </div>
             <div className='errors'>
-              {(errors) ?
+              {(errors.length > 0) ?
                 <p>Unable to log in with provided credentials.</p>
                 :
                 null
