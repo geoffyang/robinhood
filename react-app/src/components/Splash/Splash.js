@@ -12,6 +12,10 @@ export default function Splash() {
 
     // const downCaret = (<svg><path d="M1.41 0L6 4.58L10.59 0L12 1.41L6 7.41L0 1.41L1.41 0Z"></path></svg>)
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <div className="splash__nav">

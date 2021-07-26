@@ -32,26 +32,21 @@
 } */
 
 .graphButtons {
-  width: 25%;
+  width: 30%;
   margin-top: 15px;
   padding-left: 35px;
 
 }
 
 .graphButton{
-  width:18%;
-  border: 1px solid #b4bdc2;
-
+  width: 30px;
   border-radius: 5px;
-  background-color: white;
   margin: 0 1%;
   cursor: pointer;
 }
 
 .graphButton:hover{
-  background-color: #b4bdc2;
-
-  color: white;
+  text-decoration: underline;
 }
 
 .ticker-container-outer {

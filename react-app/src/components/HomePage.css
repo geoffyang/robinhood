@@ -21,9 +21,9 @@
 
 #homepage-chart {
     border: 1px solid red;
-    height: 400px;
-    display: flex;
-    align-content: center;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
 }
 
 #homepage-portfolio-title {
@@ -53,4 +53,13 @@
     display: flex;
     width: 30%;
     max-width: 400px;
+}
+
+.graph {
+    height: auto;
+    width: auto;
+}
+
+.graphContainer {
+    padding: 0;
 }

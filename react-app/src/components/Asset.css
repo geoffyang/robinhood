@@ -130,7 +130,28 @@ img {
     flex-direction: column;
 }
 
+.stockstuff {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
 
+.stockstuffcomp {
+    text-align: center;
+}
+
+.graphButton{
+    width: 30px;
+    border-radius: 5px;
+    margin: 0 1%;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+}
+
+.graphButton:hover{
+    text-decoration: underline;
+}
 
 /* div {
     border: 1px solid lightgray;

@@ -46,17 +46,16 @@ const SignUpForm = () => {
   }
 
   return (
-
-    <div>
-      <div>
-        <div>
+    <div className='signupcontainer'>
+      <div className='signupcontainerleft'>
+        <div className='signuptitle'>
           <h1>RobinCould</h1>
         </div>
         <div>
           <h2>Make Your Money Move</h2>
           <p>RobinCould lets you invest in companies you love, for free.</p>
         </div>
-        <div>
+        <div className='formstuff'>
           <p>Please enter your username, your email, and a password!</p>
           <form onSubmit={onSignUp}>
             <div>
@@ -64,46 +63,50 @@ const SignUpForm = () => {
                 <div key={ind}>{error}</div>
               ))}
             </div>
-            <div>
-              <input
-                type='text'
-                name='username'
-                placeholder='Username'
-                onChange={updateUsername}
-                value={username}
-              ></input>
-            </div>
-            <div>
-              <input
-                type='text'
-                name='email'
-                placeholder='Email'
-                onChange={updateEmail}
-                value={email}
-              ></input>
-            </div>
-            <div>
-              <input
-                type='password'
-                name='password'
-                placeholder='Password'
-                onChange={updatePassword}
-                value={password}
-              ></input>
-            </div>
-            <div>
-              <input
-                type='password'
-                name='repeat_password'
-                placeholder='Confirm password'
-                onChange={updateRepeatPassword}
-                value={repeatPassword}
-                required={true}
-              ></input>
-            </div>
-            <div>
-              <button type='submit'>Sign Up</button>
+            <div className='inputfields'>
+              <div className='usernameandemaildiv'>
+                <div>
+                  <input
+                    type='text'
+                    name='username'
+                    placeholder='Username'
+                    onChange={updateUsername}
+                    value={username}
+                  ></input>
+                </div>
+                <div>
+                  <input
+                    type='text'
+                    name='email'
+                    placeholder='Email'
+                    onChange={updateEmail}
+                    value={email}
+                  ></input>
+                </div>
+              </div>
               <div>
+                <input
+                  type='password'
+                  name='password'
+                  placeholder='Password'
+                  onChange={updatePassword}
+                  value={password}
+                ></input>
+              </div>
+              <div>
+                <input
+                  type='password'
+                  name='repeat_password'
+                  placeholder='Confirm password'
+                  onChange={updateRepeatPassword}
+                  value={repeatPassword}
+                  required={true}
+                ></input>
+              </div>
+            </div>
+            <div className='formbuttonssignup'>
+              <button type='submit'>Continue</button>
+              <div className='formlinklogin'>
                 <p>Already started?</p>
                 <NavLink to='/login' exact={true} activeClassName='active'>
                   Log in to complete your application
@@ -111,7 +114,7 @@ const SignUpForm = () => {
               </div>
             </div>
           </form>
-          <div>
+          <div className='footer-text'>
             <p>
               All investments involve risk, including the possible loss of principal.
               Investors should consider their investment objectives and risks
@@ -144,7 +147,7 @@ const SignUpForm = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className='signupcontainerright'>
         <SignUpFormContentBlock
           title={'Commission-free trading'}
           content={'Break free from commission-fees and make unlimited commission-free trades in stocks, funds, and options with Robinhood Financial. Other fees may apply. View our fee schedule to learn more.'}
