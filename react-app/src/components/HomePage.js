@@ -12,7 +12,8 @@ export default function HomePage() {
 
 
             <div id="homepage-left">
-                <div style={{"height":"400px"}}><Stock ticker={"SPY"} /></div>
+                <div id="homepage-chart">
+                    <Stock ticker={"AMC"} />  </div>
                 <br></br>
                 <br></br>
                 <div id="homepage-portfolio"><Portfolio /></div>

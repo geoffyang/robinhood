@@ -19,6 +19,13 @@
     padding-left: 2rem;
 }
 
+#homepage-chart {
+    border: 1px solid red;
+    height:400px;
+    display:flex;
+    align-content: center;
+}
+
 #homepage-portfolio {
     display: flex;
     flex-direction: row;
