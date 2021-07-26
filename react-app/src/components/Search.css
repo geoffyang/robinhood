@@ -5,7 +5,16 @@
 .suggested-search-box {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  width: 55px;
+  overflow-y: hidden;
+  height: 135px;
+  border: black 1px solid;
 }
+
+.suggested-search-box
 
 ::placeholder{
   font-size: 13px;
