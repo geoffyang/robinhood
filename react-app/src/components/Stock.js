@@ -13,6 +13,7 @@ function Stock({ ticker }) {
   const stocks = useSelector(state => state.stocks);
   const dispatch = useDispatch();
   const options = {
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -59,15 +60,22 @@ function Stock({ ticker }) {
   return (
 
     <div className="graphContainer">
-      <h1 id="stock_name">{stocks[ticker]?.shortName}</h1>
+      <span id="stock_name">{stocks[ticker]?.shortName}</span>
 
       <div className="graph">
         {stocks[ticker] ? (
-          <Line data={data} options={options} />
+          <Line data={data}
+            options={options}
+            gridLines={false}
+            height={400}
+            width={"650px"}
+          />
         ) : (
           <h3>Loading...</h3>
         )}
       </div>
+
+
       <div className="graphButtonContainer">
         <div className="graphButtons">
           <button

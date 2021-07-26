@@ -17,12 +17,12 @@ export default function Splash() {
             <div className="splash__nav">
                 <div id="logo-div">
                     <img src='https://robinhood-aa.s3.amazonaws.com/robinhood-logo.png' alt="logo"></img></div>
-                <div id="nav-dropdowns">
+                <div id="splash-nav-dropdowns">
                     <button>Products ⌄</button>
                     <button>Learn ⌄</button>
                     <button>Support ⌄</button>
                     <button>Who we are ⌄</button></div>
-                <div id="nav-buttons">
+                <div id="splash-nav-buttons">
                     <button className="buttons" id="login" onClick={() => history.push('/login')}>
                         Log In
                     </button>

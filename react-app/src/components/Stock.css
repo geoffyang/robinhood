@@ -6,17 +6,10 @@
   font-size: 18px;
 }
 
-/*
-canvas {
-  display: flex;
-  flex-direction: initial;
-  justify-content: center;
-} */
-
-/* canvas {
-  height: 100%;
-  width: 100%;
-} */
+.graphContainer{
+  height:100%;
+  width:100%;
+}
 
 #stock_name {
   display: flex;
