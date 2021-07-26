@@ -31,6 +31,7 @@ img {
 }
 
 .titles {
+    /* border:1px solid red; */
     font-size: 24px;
     letter-spacing: -0.33px;
     line-height: 32px;

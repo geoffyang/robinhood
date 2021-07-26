@@ -5,9 +5,10 @@
   padding: 0px;
   font-size: 18px;
 }
+
 Link {
   text-decoration: none;
-  font-size:inherit;
+  font-size: inherit;
 }
 
 .add-to-watchlist-container {
@@ -16,11 +17,23 @@ Link {
   flex-direction: column;
   max-width: 400px;
   height: 90vh;
-  padding: 15px 15px;
+  padding: 0 15px;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.02) 0px -12px 24px 0px, rgba(0, 0, 0, 0.06) 0px 12px 24px 0px, rgba(0, 0, 0, 0.02) 0px -12px 24px, rgba(0, 0, 0, 0.02) 0px 12px 24px;
   border-radius: 4px;
   border: 1px solid rgb(227, 233, 237);
+}
+
+#watchlist-title {
+  /* border:1px solid red; */
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(227, 233, 237);
+  margin-bottom: 1rem;
 }
 
 .watchlist-components {
@@ -41,10 +54,10 @@ Link {
   box-shadow: 24px grey;
 }
 
-.link-look{
+.link-look {
   font-size: inherit;
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 .current-price {
